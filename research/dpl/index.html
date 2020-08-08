@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Disentangle Perceptual Learning</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                Disentangle Perceptual Learning through Online Contrastive Learning
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://mkfmiku.github.io/">
+                          Kangfu Mei
+                        </a>
+                        </br>CUHK(SZ)
+                    </li>
+                    <li>
+                        Yao Lu
+                        </br>XMU
+                    </li>
+                    <li>
+                        Qiaosi Yi
+                        </br>ECNU
+                    </li>
+                    <li>
+                        Haoyu Wu
+                        </br>CUHK(SZ)
+                    </li>
+                    <li>
+                        <a href="https://junchenglee.com/">
+                            Juncheng Li
+                        </a>
+                        </br>ECNU
+                    </li>
+                    <li>
+                        <a href="https://myweb.cuhk.edu.cn/ruihuang">
+                            Rui Huang
+                        </a>
+                        </br>CUHK(SZ)
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2006.13511">
+                            <image src="img/dpl_paper_image.jpg" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/MKFMIKU/Perceptual-Disentanglement">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <image src="img/teaser.png" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
+                    Pursuing realistic results according to human visual perception is the central concern in the image transformation tasks. Perceptual learning approaches like perceptua loss are empirically powerful for such tasks but they usually rely on the pre-trained classification network to provide features, which are not necessarily optimal in terms of visual perception of image transformation. In this paper, we argue that, among the features representation from the pre-trained classification network, only limited dimensions are related to human visual perception, while others are irrelevant, although both will affect the final image transformation results. Under such an assumption, we try to disentangle the perception-relevant dimensions from the representation through our proposed online contrastive learning. The resulted network includes the pre-training part and a feature selection layer, followed by the contrastive learning module, which utilizes the transformed results, target images, and task-oriented distorted images as the positive, negative, and anchor samples, respectively. The contrastive learning aims at activating the perceptionrelevant dimensions and suppressing the irrelevant ones by using the triplet loss, so that the original representation can be disentangled for better perceptual quality. Experiments on various image transformation tasks demonstrate the superiority of our framework, in terms of human visual perception, to the existing approaches using pre-trained networks and empirically designed losses.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
