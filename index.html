@@ -86,7 +86,7 @@
               <a href="research/dpl/index.html">project page</a> / 
               <a href="https://arxiv.org/abs/2006.13511">arXiv</a>
               <p></p>
-              <p>Enhancing realism of resotred images using a simple contrastive learning module that disentangles perception-relevant dimensions to boost learning.</p>
+              <p>Enhance the realism of resotred images using a simple contrastive learning module that disentangles perception-relevant dimensions in self-supervised manner.</p>
             </td>
           </tr>
 
@@ -119,11 +119,49 @@
               <br>
               <em>arXiv</em>, 2020
               <br>
-              <a href="#">arXiv</a>
+              <a href="#">Work in Progress</a>
               <br>
               <p></p>
               <p>
                 Enable networks to learn the image translation without aligned pairs and achieve the state-of-the-art results in the real-world super-resolution task.
+              </p>
+            </td>
+          </tr>
+
+          <tr onmouseout="dounet_stop()" onmouseover="dounet_start()" bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='dounet_image'>
+                  <img src='images/dounet_after.png' width="160"></div>
+                <img src='images/dounet_before.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function dounet_start() {
+                  document.getElementById('dounet_image').style.opacity = "1";
+                }
+
+                function dounet_stop() {
+                  document.getElementById('dounet_image').style.opacity = "0";
+                }
+                dounet_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="#">
+                <papertitle>Visual and Semantic Scene Understanding Under Bad Weather</papertitle>
+              </a>
+              <br>
+              <strong>Kangfu Mei</strong>, Haoyu Wu, 
+              <a href="https://junchenglee.com/">Juncheng Li</a>,
+              <a href="https://myweb.cuhk.edu.cn/ruihuang">Rui Huang</a>
+              <br>
+              <em>arXiv</em>, 2019
+              <br>
+              <a href="#">Work in Progress</a>
+              <br>
+              <p></p>
+              <p>
+                Address the semantic segmentation accuracy dropping problem in dehazed images using the proposed semantic guiding loss.
               </p>
             </td>
           </tr>
