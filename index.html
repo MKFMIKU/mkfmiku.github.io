@@ -86,11 +86,48 @@
               <a href="research/dpl/index.html">project page</a> / 
               <a href="https://arxiv.org/abs/2006.13511">arXiv</a>
               <p></p>
-              <p>Enhancing realism of resotred images with a simple contrastive learning module that disentangles perception-relevant dimensions to boost learning.</p>
+              <p>Enhancing realism of resotred images using a simple contrastive learning module that disentangles perception-relevant dimensions to boost learning.</p>
             </td>
-          </tr> 
+          </tr>
 
-    
+          <tr onmouseout="spin_stop()" onmouseover="spin_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='spin_image'>
+                  <img src='images/spin_after.png' width="160"></div>
+                <img src='images/spin_before.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function spin_start() {
+                  document.getElementById('spin_image').style.opacity = "1";
+                }
+
+                function spin_stop() {
+                  document.getElementById('spin_image').style.opacity = "0";
+                }
+                spin_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="#">
+                <papertitle>Spatial Pixel Irrelevant Network for Learning Image-to-image Translation</papertitle>
+              </a>
+              <br>
+              <strong>Kangfu Mei</strong>, Haoyu Wu, 
+              <a href="https://junchenglee.com/">Juncheng Li</a>,
+              <a href="https://myweb.cuhk.edu.cn/ruihuang">Rui Huang</a>
+              <br>
+              <em>arXiv</em>, 2020
+              <br>
+              <a href="#">arXiv</a>
+              <br>
+              <p></p>
+              <p>
+                Enable networks to learn the image translation without aligned pairs and achieve the state-of-the-art results in the real-world super-resolution task.
+              </p>
+            </td>
+          </tr>
+
           <tr onmouseout="hern_stop()" onmouseover="hern_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -191,6 +228,42 @@
               <p>The first proposed haze removal method that removes haze from a single image in the complete end-to-end manner.</p>
             </td>
           </tr>
+
+          <tr onmouseout="rpm_stop()" onmouseover="rpm_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='rpm_image'>
+                  <img src='images/rpm_after.png' width="160"></div>
+                <img src='images/rpm_before.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function rpm_start() {
+                  document.getElementById('rpm_image').style.opacity = "1";
+                }
+
+                function rpm_stop() {
+                  document.getElementById('rpm_image').style.opacity = "0";
+                }
+                rpm_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://ieeexplore.ieee.org/document/8695183">
+                <papertitle>Deep Residual Refining based Pseudo-multi-frame Network for Effective Single Image Super-resolution</papertitle>
+              </a>
+              <br>
+              <strong>Kangfu Mei</strong>, Aiwen Jiang,
+              <a href="https://junchenglee.com/">Juncheng Li</a>, Bo Liu, Jihua Ye, Mingwen Wang
+              <br>
+              <em>IET Image Processing</em>, 2018
+              <br>
+              <a href="https://github.com/MKFMIKU/RPMNet">code</a> /
+              <a href="data/mei2018deep.bib">bibtex</a>
+              <p></p>
+              <p>The first proposed haze removal method that removes haze from a single image in the complete end-to-end manner.</p>
+            </td>
+          </tr>
+          
           
           <tr onmouseout="msrn_stop()" onmouseover="msrn_start()" bgcolor="#ffffd0">
             <td style="padding:20px;width:25%;vertical-align:middle">
@@ -226,6 +299,30 @@
               <p>Introduce a novel multi-scale residual network for recovering the high-quality image from low-resolution.</p>
             </td>
           </tr>
+
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <img src='images/srsenet.png' width="160">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/1810.01831">
+                <papertitle>Effective Single-image Super-resolution Model using Squeeze-and-excitation Networks</papertitle>
+              </a>
+              <br>
+              <strong>Kangfu Mei</strong>, Aiwen Jiang,
+              <a href="https://junchenglee.com/">Juncheng Li</a>, Jihua Ye, Mingwen Wang
+              <br>
+              <em>ICNOIP</em>, 2018
+              <br>
+              <a href="https://arxiv.org/abs/1810.01831">arXiv</a> / 
+              <a href="https://github.com/MKFMIKU/SrSENet">code</a> /
+              <a href="data/mei2018effective.bib">bibtex</a>
+              <p></p>
+              <p>Using squeeze-and-excitation blocks to improve the visual quality of super-resolution results with finer texture details.</p>
+            </td>
+          </tr>
         </tbody></table>
 
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
@@ -235,6 +332,18 @@
               <p>Reviewer of International Journal of Computer Vision (IJCV)</p>
               <p>Reviewer of IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</p>
               <p>Reviewer of Computer Vision and Image Understanding (CVIU)</p>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+          <tr>
+            <td>
+              <heading>Prizes</heading>
+              <p style="color: crimson">AIM2019 Mobile Raw to DSLR RGB Image Mapping Challenge (ICCV2019 Workshop): Top 1</p>
+              <p>Alibaba Youku Video Enhancement and Super-Resolution Challenge 2019: Top 4</p>
+              <p>NTIRE2018 Image Dehazing Challenge (CVPR2018 Workshop): Honorable Mention Award & Top 6</p>
+              <p style="color: crimson">University Computer Software Programming Challenge 2018 in The Pearl River Delta: Gold Award & Best innovative Award</p>
             </td>
           </tr>
         </tbody></table>
