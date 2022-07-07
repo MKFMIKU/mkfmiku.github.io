@@ -74,6 +74,43 @@
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
+              <tr onmouseout="d2sm_stop()" onmouseover="d2sm_start()" bgcolor="#ffffd0">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='d2sm_image'>
+                      <img src='images/d2sm_after.png' width="160">
+                    </div>
+                    <img src='images/d2sm_before.png' width="160">
+                  </div>
+                  <script type="text/javascript">
+                    function d2sm_start() {
+                      document.getElementById('d2sm_image').style.opacity = "1";
+                    }
+
+                    function d2sm_stop() {
+                      document.getElementById('d2sm_image').style.opacity = "0";
+                    }
+                    d2sm_stop()
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://kfmei.page/D2SM/">
+                    <papertitle>Deep Semantic Statistics Matching (D2SM) Denoising Network</papertitle>
+                  </a>
+                  <br>
+                  <strong>Kangfu Mei</strong>,
+                  <a href="https://myweb.cuhk.edu.cn/ruihuang">Rui Huang</a>,
+                  <a href="https://engineering.jhu.edu/vpatel36/sciencex_teams/vishalpatel/">Vishal M. Patel</a>
+                  <br>
+                  <em>ECCV</em>, 2022
+                  <br>
+                  <a href="#">Project Page (Coming Soon)</a> /
+                  <a href="#">arXiv (Coming Soon)</a>
+                  <p></p>
+                  <p>What will happen if denoising is performed according to the statistics of image patches instead of the pixel correspondence? See it!</p>
+                </td>
+              </tr>
+
               <tr>
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
