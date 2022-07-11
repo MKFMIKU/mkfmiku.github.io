@@ -30,7 +30,7 @@
             <h2 class="col-md-12 text-center">
                 Deep Semantic Statistics Matching (<b>D2SM</b>) Denoising Network</br>
                 <small>
-                    ECCV 2022
+                    <b>ECCV 2022</b>, A New General Plug-and-play Component For Denoising
                 </small>
             </h2>
         </div>
@@ -83,6 +83,18 @@
                     By learning to preserve the semantic distribution of denoised images, we empirically find our method significantly improves the denoising capabilities of networks, and the denoised results can be better understood by high-level vision tasks.
                     Comprehensive experiments conducted on the noisy Cityscapes dataset demonstrate the superiority of our method on both the denoising performance and semantic segmentation accuracy.
                     Moreover, the performance improvement observed on our extended tasks including super-resolution and dehazing experiments shows its potentiality as a new general plug-and-play component.                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    What it is doing?
+                </h3>
+                Preserving the semantics of denoised images. By exploiting t-SNE to reduce dimensions of semantic features and project them into 2D coordinates, we visualize the distributions of denoised animal images in the semantic feature space. Ours preserves most semantics as the clear images.
+            </div>
+            <div width="100%">
+                <img src="images/semantic_preserving.png" class="col-md-10 col-md-offset-1">
             </div>
         </div>
 
