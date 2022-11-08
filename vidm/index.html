@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>video-implicit-diffusion</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>VIDM</b>: Video Implicit Diffusion Model</br>
+                <small>
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="#">
+                            Anonymized Authors
+                        </a>
+                    </li>
+                    <br>
+                    <br>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <img src="results/backbone.png" alt="teaser" width="100%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Diffusion models have emerged as a powerful generative method for synthesizing high quality images. In this paper, we propose a video generation method based on diffusion models, where the effects of motion are simulated in an implicit manner, i.e. one can sample plausible video motions according to the latent feature of the nearest frames. We improve the quality of the generated videos by proposing multiple strategies such as sampling space truncation, robustness penalty, and positional group normalization. Various experiments are conducted on datasets consisting of videos with different resolutions and different number of frames and it is shown that the proposed method can outperform the state-of-the-art generative adversarial network-based methods by a significant margin in terms of FVD scores and visual quality.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Results
+                </h3>
+                <div>
+                    <h4>
+                        UCF-101
+                    </h4>
+                    <div class="col-md-4 text-center">
+                        <span>DIGAN</span>
+                        <div>
+                            <img src="results/ucf101/digan.gif" width="100%" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>StyleGAN-V</span>
+                        <div>
+                            <img src="results/ucf101/stylegan-v.gif" width="100%" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>VIDM (ours)</span>
+                        <div>
+                            <img src="results/ucf101/vidm.gif" width="100%" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10 col-md-offset-1" style="padding-top: 2rem;">
+                <div>
+                    <h4>
+                        Sky Time-lapse 
+                    </h4>
+                    <div class="col-md-4 text-center">
+                        <span>DIGAN</span>
+                        <div>
+                            <img src="results/sky/digan.gif" width="100%" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>StyleGAN-V</span>
+                        <div>
+                            <img src="results/sky/stylegan-v.gif" width="100%" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>VIDM (ours)</span>
+                        <div>
+                            <img src="results/sky/vidm.gif" width="100%" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10 col-md-offset-1" style="padding-top: 2rem;">
+                <div>
+                    <h4>
+                        TaiChi-HD
+                    </h4>
+                    <div class="col-md-4 text-center">
+                        <span>DIGAN</span>
+                        <div>
+                            <img src="results/taichi/digan.gif" width="100%" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>StyleGAN-V</span>
+                        <div>
+                            <img src="results/taichi/stylegan-v.gif" width="100%" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>VIDM (ours)</span>
+                        <div>
+                            <img src="results/taichi/vidm.gif" width="100%" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10 col-md-offset-1" style="padding-top: 2rem;">
+                <div>
+                    <h4>
+                        CLEVRER
+                    </h4>
+                    <div class="col-md-12 text-center">
+                        <span>DIGAN</span>
+                            <video src="results/clevrer/digan.mp4" width="100%" autoplay loop muted></video>
+                    </div>
+                    <br>
+                    <div class="col-md-12 text-center">
+                        <span>StyleGAN-V</span>
+                            <video src="results/clevrer/stylegan-v.mp4" width="100%" autoplay loop muted></video>
+                    </div>
+                    <br>
+                    <div class="col-md-12 text-center">
+                        <span>VIDM (ours)</span>
+                            <video src="results/clevrer/vidm.mp4" width="100%" autoplay loop muted></video>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1" style="padding-top: 2rem;">
+                <div id="scene">
+                    <h4>
+                        Scene Fixed Result Comparisons
+                    </h4>
+                    <div class="col-md-12 text-center">
+                        <span>DIGAN</span>
+                            <video src="results/digan_scene_fix.mp4" width="100%" autoplay controls loop muted></video>
+                    </div>
+                    <br>
+                    <div class="col-md-12 text-center">
+                        <span>VIDM (ours)</span>
+                            <video src="results/ours_scene_fix.mp4" width="100%" autoplay controls loop muted></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    The website template was borrowed from <a href="https://jonbarron.info/mipnerf360/">Mip-NeRF
+                        360</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const viewers = document.querySelectorAll(".image-compare");
+    viewers.forEach((element) => {
+        let view = new ImageCompare(element, {
+            hoverStart: true,
+            addCircle: true
+        }).mount();
+    });
+
+    $(document).ready(function () {
+        var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
+            lineNumbers: false,
+            lineWrapping: true,
+            readOnly: true
+        });
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    });
+</script>
+
+</html>
