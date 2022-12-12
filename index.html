@@ -74,6 +74,43 @@
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
+              <tr onmouseout="bid_stop()" onmouseover="bid_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='bid_image'>
+                      <img src='vidm/results/taichi/vidm.gif' width="160">
+                    </div>
+                    <img src='vidm/results/sky/vidm.gif' width="160">
+                  </div>
+                  <script type="text/javascript">
+                    function bid_start() {
+                      document.getElementById('bid_image').style.opacity = "1";
+                    }
+
+                    function bid_stop() {
+                      document.getElementById('bid_image').style.opacity = "0";
+                    }
+                    bid_stop()
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="bi-noising/">
+                    <papertitle>Towards Conditional Diffusion Models with Generative Restoration Priors</papertitle>
+                  </a>
+                  <br>
+                  <strong>Kangfu Mei*</strong>,
+                  <a href="https://nithin-gk.github.io/">Nithin Gopalakrishnan Nair*</a>,
+                  <a href="https://engineering.jhu.edu/vpatel36/sciencex_teams/vishalpatel/">Vishal M. Patel</a>,
+                  <br>
+                  <em>arXiv</em>, 2022
+                  <br>
+                  <a href="bi-noising/">Project Page</a> /
+                  <a href="d2sm/d2sm-poster.pdf">PDF</a> /
+                  <p></p>
+                  <p>Video Generation Diffusion Models By Using Implicit Motiion Condition.</p>
+                </td>
+              </tr>
+
               <tr onmouseout="vidm_stop()" onmouseover="vidm_start()" bgcolor="#ffffd0">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
@@ -90,7 +127,7 @@
                     function vidm_stop() {
                       document.getElementById('vidm_image').style.opacity = "0";
                     }
-                    d2sm_stop()
+                    vidm_stop()
                   </script>
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">

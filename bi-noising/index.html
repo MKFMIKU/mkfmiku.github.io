@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>video-implicit-diffusion</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+    <link rel="stylesheet" href="/path/to/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery-highlight@3.5.0/jquery.highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>Bi-Noising Diffusion</b>: Towards Conditional Diffusion Models </br> with Generative Restoration Priors</br>
+                <small>
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://kfmei.page/">
+                            Kangfu Mei*
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://nithin-gk.github.io/">
+                            Nithin Gopalakrishnan Nair*
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://engineering.jhu.edu/vpatel36/vishal-patel/">
+                            Vishal M. Patel
+                        </a>
+                    </li>
+                    <!-- <br> -->
+                    <!-- <br> -->
+                </ul>
+                <ul class="list-inline">
+                    <li>Johns Hopkins University <img src="https://img.icons8.com/external-yogi-aprelliyanto-outline-color-yogi-aprelliyanto/18/null/external-owl-animal-yogi-aprelliyanto-outline-color-yogi-aprelliyanto.png"/></li>
+                    <li>*denotes equal contribution</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="bi-noising.pdf">
+                        <image src="https://img.icons8.com/plasticine/100/null/stack-of-paper.png" height="60px">
+                            <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                        <image src="https://img.icons8.com/plasticine/100/null/github-squared.png" height="60px">
+                            <h4><strong>Code (Comming Soon)</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <img src="bi-noising.png" alt="teaser" width="100%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Conditional diffusion probabilistic models can model the distribution of natural images and can generate diverse and realistic samples based on given conditions. However, oftentimes their results can be unrealistic with observable color shifts and textures. We believe that this issue results from the divergence between the probabilistic distribution learned by the model and the distribution of natural images. The delicate conditions gradually enlarge the divergence during each sampling timestep. To address this issue, we introduce a new method that brings the predicted samples to the training data manifold using a pretrained unconditional diffusion model. The unconditional model acts as a regularizer and reduces the divergence introduced by the conditional model at each sampling step. We perform comprehensive experiments to demonstrate the effectiveness of our approach on super-resolution, colorization, turbulence removal, and image-deraining tasks. The improvements obtained by our method suggest that the priors can be incorporated as a general plugin for improving conditional diffusion models.                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    TL;DR
+                </h3>
+                <div>
+                    <pre><code class="language-python">
+  noise_pred = cond_unet(latent_model_input, t, conditions=(condition)).sample
+<span style="color: #50a14f;">+ noise_pred, _ = noise_pred.chunk(2, dim=1)</span>
+<span style="color: #50a14f;">+ pred_latents = _predict_xstart_from_eps(latent_model_input, t, noise_pred).clamp(-1, 1)</span>
+<span style="color: #50a14f;">+ latent_model_input = q_sample(pred_latents, t)</span>
+<span style="color: #50a14f;">+ noise_pred = uncond_unet(latent_model_input, t, conditions=(uncondition))</span>
+
+  # classifier free guidance
+<span style="color: #e45649;">- noise_pred_uncond = uncond_unet(latent_model_input, t, conditions=(uncondition)).sample</span>
+<span style="color: #e45649;">- noise_pred_uncond, noise_pred_text = noise_pred.chunk(2)</span>
+<span style="color: #e45649;">- noise_pred = noise_pred_uncond + guidance_scale * (noise_pred_text - noise_pred_uncond)</span>
+</code></pre>
+                </div>    
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Face Colorization Demo
+                </h3>
+                <div>
+
+                </div>    
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    The website template was borrowed from <a href="https://jonbarron.info/mipnerf360/">Mip-NeRF
+                        360</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const viewers = document.querySelectorAll(".image-compare");
+    viewers.forEach((element) => {
+        let view = new ImageCompare(element, {
+            hoverStart: true,
+            addCircle: true
+        }).mount();
+    });
+
+    $(document).ready(function () {
+        var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
+            lineNumbers: false,
+            lineWrapping: true,
+            readOnly: true
+        });
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    });
+</script>
+
+</html>
