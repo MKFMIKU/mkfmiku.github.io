@@ -95,13 +95,13 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <img src="bi-noising.png" alt="teaser" width="100%">
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <h3>
                     Abstract
                 </h3>
@@ -111,7 +111,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <h3>
                     TL;DR
                 </h3>
@@ -135,22 +135,12 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <h3>
                     Face Colorization Demo
                 </h3>
-                <p class="text-justify">
-                    The demo for our preoject can be found <a href="http://bi-noising.demohub.cc/">
-                        Demo Project
-                    </a>
-                    <div class="col-md-8 col-md-offset-2">
-                        <img src="screenshot.png" alt="teaser" width="100%">
-                    </div>
-                    <div class="col-md-8 col-md-offset-2">
-                        <img src="result_screenshot.png" alt="teaser" width="100%">
-                    </div>
-                <div>
-
+                <div class="col-md-12">
+                    <gradio-app src="https://mkfmiku-bi-noising-diffusion.hf.space"></gradio-app>
                 </div>    
             </div>
         </div>
@@ -168,6 +158,10 @@
         </div>
     </div>
 </body>
+<script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js"
+></script>
 <script>
     const viewers = document.querySelectorAll(".image-compare");
     viewers.forEach((element) => {
