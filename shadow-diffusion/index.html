@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Latent Feature-Guided Diffusion Models for Shadow Removal</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                Latent Feature-Guided Diffusion Models for Shadow Removal</br>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://kfmei.page">
+                            Kangfu Mei
+                        </a>
+                    </li>
+                    
+                    <li>
+                        Luis Figueroa
+                    </li>
+
+                    <li>
+                        Zhe Lin
+                    </li>
+
+                    <li>
+                        Zhihong Ding
+                    </li>
+
+                    <li>
+                        Scott Cohen
+                    </li>
+
+                    <li>
+                        Vishal M. Patel
+                    </li>
+
+                    <br>
+                    <br>
+                </ul>
+                <ul class="list-inline" style="margin-top: -2rem;">
+                    <li>
+                        Johns Hopkins University
+                    </li>
+                    <li>
+                        Adobe Research
+                    </li>
+                    <br>
+                    <br>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="#">
+                        <image src="https://img.icons8.com/carbon-copy/100/stack-of-paper.png" height="60px">
+                            <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+
+                    <!-- <li>
+                        <a href="d2sm-poster.pdf">
+                        <image src="images/poster.png" height="60px">
+                            <h4><strong>Poster</strong></h4>
+                        </a>
+                    </li> -->
+                 
+                    <!-- <li>
+                        <a href="https://www.cis.jhu.edu/~kmei1/share/NoisyCityscapes.zip">
+                        <image src="images/dataset.png" height="60px">
+                            <h4><strong>Dataset</strong></h4>
+                        </a>
+                    </li> -->
+                    <!-- <li>
+                        <a href="#">
+                        <image src="images/github.png" height="60px">
+                            <h4><strong>Code</strong></h4>
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <iframe width="100%" height="512" src="https://www.youtube.com/embed/WvWBoOZR208?si=zzPQf7T5-QkKN_CQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Recovering textures under shadows has remained a challenging problem due to the difficulty of inferring shadow-free scenes from shadow images. In this paper, we propose the use of diffusion models as they offer a promising approach to gradually refine the details of shadow regions during the diffusion process. Our method improves this process by conditioning on a learned latent feature space that inherits the characteristics of shadow-free images, thus avoiding the limitation of conventional methods that condition on degraded images only. Additionally, we propose to alleviate potential local optima during training by fusing noise features with the diffusion network. We demonstrate the effectiveness of our approach which outperforms the previous best method by 13% in terms of RMSE on the AISTD dataset. Further, we explore instance-level shadow removal, where our model outperforms the previous best method by 82% in terms of RMSE on the DESOBA dataset.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-12">
+                    <textarea id="bibtex" class="form-control" readonly>
+                    @inproceedings{mei2024shadow,
+                    title={Latent Feature-Guided Diffusion Models for Shadow Removal},
+                    author={Kangfu Mei and Luis Figueroa and Zhe Lin and Zhihong Ding and Scott Cohen and Vishal M. Patel},
+                    booktitle={Proceedings of the Winter Conference on Applications of Computer Vision (WACV)},
+                    year={2024}
+                    }</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    The website template was borrowed from <a href="https://jonbarron.info/mipnerf360/">Mip-NeRF
+                        360</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const viewers = document.querySelectorAll(".image-compare");
+    viewers.forEach((element) => {
+        let view = new ImageCompare(element, {
+            hoverStart: true,
+            addCircle: true
+        }).mount();
+    });
+
+    $(document).ready(function () {
+        var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
+            lineNumbers: false,
+            lineWrapping: true,
+            readOnly: true
+        });
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    });
+</script>
+
+</html>
