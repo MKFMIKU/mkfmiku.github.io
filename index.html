@@ -23,6 +23,21 @@
     hr.solid {
       border-top: 3px solid #bbb;
     }
+    .content {
+      width: 100%;
+      height: 100%;
+    }
+
+    .content .header {
+      height: 50px;
+      position: sticky;
+      top: 0;
+      background-color: white;
+      z-index: 100;
+    }
+    .content-inner {
+      top: -1;
+    }
   </style>
 </head>
 
@@ -87,15 +102,16 @@
           </table>
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding-left:20px; padding-top: 20px;">
+            <tbody class="content">
+              <tr  class="header">
+                <td style="padding-left:20px; padding-top: 20px;width: 25%;">
                   <heading>2024</heading>
                   <hr class="solid">
                 </td>
+                <td style="width: 75%;"></td>
               </tr>
             
-              <tr onmouseout="bid_stop()" onmouseover="bid_start()">
+              <tr onmouseout="bid_stop()" onmouseover="bid_start()" class="content-inner">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
                     <img src='images/scaling.png' width="160">
@@ -133,7 +149,7 @@
                 </td>
               </tr>
               
-              <tr bgcolor="#ffffd0">
+              <tr bgcolor="#ffffd0" class="content-inner">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
                     <img src='images/codi.jpg' width="160">
@@ -172,11 +188,12 @@
                 </td>
               </tr>
         
-              <tr>
+              <tr class="header">
                 <td style="padding-left:20px; padding-top: 20px;">
                   <heading>2023</heading>
                   <hr class="solid">
                 </td>
+                <td style="width: 75%;"></td>
               </tr>
 
               <tr onmouseout="vidm_stop()" onmouseover="vidm_start()" bgcolor="#ffffd0">
@@ -238,11 +255,12 @@
                 </td>
               </tr>
 
-              <tr>
+              <tr class="header">
                 <td style="padding-left:20px; padding-top: 20px;">
                   <heading>2022</heading>
                   <hr class="solid">
                 </td>
+                <td style="width: 75%;"></td>
               </tr>
 
               <tr onmouseout="d2sm_stop()" onmouseover="d2sm_start()" bgcolor="#ffffd0">
@@ -283,11 +301,12 @@
                 </td>
               </tr>
               
-              <tr>
+              <tr class="header">
                 <td style="padding-left:20px; padding-top: 20px;">
                   <heading>2021</heading>
                   <hr class="solid">
                 </td>
+                <td style="width: 75%;"></td>
               </tr>
 
               <tr>
@@ -325,11 +344,12 @@
                 </td>
               </tr>
 
-              <tr>
+              <tr class="header">
                 <td style="padding-left:20px; padding-top: 20px;width:25%vertical-align:middle">
                   <heading>2019</heading>
                   <hr class="solid">
                 </td>
+                <td style="width: 75%;"></td>
               </tr>
 
               <tr onmouseout="pffnet_stop()" onmouseover="pffnet_start()">
@@ -368,11 +388,12 @@
                 </td>
               </tr>
               
-              <tr>
+              <tr class="header">
                 <td style="padding-left:20px; padding-top: 20px;width:25%vertical-align:middle">
                   <heading>2018</heading>
                   <hr class="solid">
                 </td>
+                <td style="width: 75%;"></td>
               </tr>
 
               <tr onmouseout="msrn_stop()" onmouseover="msrn_start()">
