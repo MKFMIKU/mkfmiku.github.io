@@ -20,6 +20,9 @@
     .o-yellow{ color:#F4B400; }
     .l-green{ color:#0F9D58; }
     .e-red { display:inline-block;transform:rotate(-20deg); }
+    hr.solid {
+      border-top: 3px solid #bbb;
+    }
   </style>
 </head>
 
@@ -85,8 +88,13 @@
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
-
-
+              <tr>
+                <td style="padding-left:20px; padding-top: 20px;">
+                  <heading>2024</heading>
+                  <hr class="solid">
+                </td>
+              </tr>
+            
               <tr onmouseout="bid_stop()" onmouseover="bid_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
@@ -163,27 +171,11 @@
                   <p>Faster conditional diffusion that produces high-quality images with 1-4 sampling steps.</p>
                 </td>
               </tr>
-
+        
               <tr>
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <img src='images/lttgan.jpg' width="160">
-                  </div>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/2112.02379">
-                    <papertitle>LTT-GAN: Looking Through Turbulence by Inverting GANs</papertitle>
-                  </a>
-                  <br>
-                  <strong>Kangfu Mei</strong>,
-                  <a href="https://engineering.jhu.edu/vpatel36/sciencex_teams/vishalpatel/">Vishal M. Patel</a>
-                  <br>
-                  <em>IEEE Journal of Selected Topics in Signal Processing</em>, 2023 <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4200690"><i style="color: gray; font-size: .6rem;">[IF: 7.695]</i></a>
-                  <br>
-                  <!-- <a href="https://kfmei.page/LTT-GAN/">Project Page</a> / -->
-                  <a href="https://arxiv.org/abs/2112.02379">arXiv</a>
-                  <p></p>
-                  <p>The first turbulence mitigation algorithm that can clearly recover face images captured in a range of 300 meters long.</p>
+                <td style="padding-left:20px; padding-top: 20px;">
+                  <heading>2023</heading>
+                  <hr class="solid">
                 </td>
               </tr>
 
@@ -220,6 +212,36 @@
                   <a href="https://arxiv.org/abs/2212.00235">arXiv</a>
                   <p></p>
                   <p>Video Generation Diffusion Models By Using Implicit Motiion Condition.</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <img src='images/lttgan.jpg' width="160">
+                  </div>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2112.02379">
+                    <papertitle>LTT-GAN: Looking Through Turbulence by Inverting GANs</papertitle>
+                  </a>
+                  <br>
+                  <strong>Kangfu Mei</strong>,
+                  <a href="https://engineering.jhu.edu/vpatel36/sciencex_teams/vishalpatel/">Vishal M. Patel</a>
+                  <br>
+                  <em>IEEE Journal of Selected Topics in Signal Processing</em>, 2023 <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4200690"><i style="color: gray; font-size: .6rem;">[IF: 7.695]</i></a>
+                  <br>
+                  <!-- <a href="https://kfmei.page/LTT-GAN/">Project Page</a> / -->
+                  <a href="https://arxiv.org/abs/2112.02379">arXiv</a>
+                  <p></p>
+                  <p>The first turbulence mitigation algorithm that can clearly recover face images captured in a range of 300 meters long.</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding-left:20px; padding-top: 20px;">
+                  <heading>2022</heading>
+                  <hr class="solid">
                 </td>
               </tr>
 
@@ -262,6 +284,13 @@
               </tr>
               
               <tr>
+                <td style="padding-left:20px; padding-top: 20px;">
+                  <heading>2021</heading>
+                  <hr class="solid">
+                </td>
+              </tr>
+
+              <tr>
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
                     <img src='images/attanet.png' width="160">
@@ -293,6 +322,56 @@
                   <p>Two novel Strip Attention Module (SAM) and Attention Fusion Module (AFM) are proposed for enhancing
                     the accuracy of semantic segmentation networks with limited computational complexity increasing.
                     , espcically the scenes contains vertical strip areas</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding-left:20px; padding-top: 20px;width:25%vertical-align:middle">
+                  <heading>2019</heading>
+                  <hr class="solid">
+                </td>
+              </tr>
+
+              <tr onmouseout="pffnet_stop()" onmouseover="pffnet_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='pffnet_image'>
+                      <img src='images/pffnet_after.png' width="160">
+                    </div>
+                    <img src='images/pffnet_before.png' width="160">
+                  </div>
+                  <script type="text/javascript">
+                    function pffnet_start() {
+                      document.getElementById('pffnet_image').style.opacity = "1";
+                    }
+
+                    function pffnet_stop() {
+                      document.getElementById('pffnet_image').style.opacity = "0";
+                    }
+                    pffnet_stop()
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a
+                    href="https://arxiv.org/abs/1810.02283">
+                    <papertitle>Progressive Feature Fusion Network for Realistic Image Dehazing</papertitle>
+                  </a>
+                  <br>
+                  <strong>Kangfu Mei</strong>, Aiwen Jiang, <a href="https://junchenglee.com/">Juncheng Li</a>, Mingwen Wang
+                  <br>
+                  <em>ACCV</em>, 2019
+                  <br>
+                  <a href="https://github.com/MKFMIKU/PFFNet">code</a> /
+                  <a href="https://arxiv.org/abs/1810.02283">arXiv</a>
+                  <p></p>
+                  <p>PFFNet was the first dehazing netowrk that uses fully end-to-end neural network architecture without physical gating unit. More than <b>100 works</b> (untill 2024) adapot our strategy and show its effectiveness.</p>
+                </td>
+              </tr>
+              
+              <tr>
+                <td style="padding-left:20px; padding-top: 20px;width:25%vertical-align:middle">
+                  <heading>2018</heading>
+                  <hr class="solid">
                 </td>
               </tr>
 
@@ -329,8 +408,7 @@
                   <a href="https://github.com/MIVRC/MSRN-PyTorch">code</a> /
                   <a href="data/li2018multi.bib">bibtex</a>
                   <p></p>
-                  <p>Introduce a novel multi-scale residual network for recovering the high-quality image from
-                    low-resolution.</p>
+                  <p>We built MSRN in 2018. It quickly becomes the foundamental component in all image restoration works and has more than <b>800 citations</b> untill 2024.</p>
                 </td>
               </tr>
             </tbody>
