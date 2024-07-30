@@ -109,6 +109,9 @@ name {
   width: 160px;
   height: 160px;
   position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .two {
@@ -118,6 +121,18 @@ name {
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.one img{
+  max-width: 100%; /* Ensure image is responsive */
+  max-height: 100%; /* Ensure image is responsive */
+}
+
+.two img{
+  max-width: 100%; /* Ensure image is responsive */
+  max-height: 100%; /* Ensure image is responsive */
 }
 
 .fade {
