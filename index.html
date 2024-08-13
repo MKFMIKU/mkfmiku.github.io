@@ -110,6 +110,49 @@
                 </td>
                 <td style="width: 75%;"></td>
               </tr>
+
+              <tr onmouseout="sdft_stop()" onmouseover="sdft_start()" class="content-inner" bgcolor="#ffffd0">
+                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='sdft_image'>
+                      <video src='images/sdft_before.mp4' width="160" autoplay loop>
+                    </div>
+                    <video src='images/sdft_after.mp4' width="160" autoplay loop>
+                  </div>
+                  <script type="text/javascript">
+                    function sdft_start() {
+                      document.getElementById('sdft_image').style.opacity = "1";
+                    }
+
+                    function sdft_stop() {
+                      document.getElementById('sdft_image').style.opacity = "0";
+                    }
+                    sdft_stop()
+                  </script>
+                </td>
+                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
+                  <a href="sdft/">
+                    <papertitle>sDFT: Scaling Diffusion Field Transformers on Images, Videos, and 3D Data</papertitle>
+                  </a>
+                  <br>
+                  <span class="author-block">
+                    <strong>Kangfu Mei</strong>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://cdluminate.github.io/">Mo Zhou</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a>,
+                  </span>
+                  <br>
+                  <em>Work in Progress</em>
+                  <br>
+                  <!-- <a href="bi-noising">Project Page</a> / -->
+                  <a href="sdft/">project page</a>
+                  <p></p>
+                  <p>A generative filed model that can generate image, video, and 3D data in a single unified network architecture. The unification can boost video generation with 3D prior in multi-task learning, with the 10 times smaller model size than SORA.</p>
+                </td>
+              </tr>
             
               <tr onmouseout="bid_stop()" onmouseover="bid_start()" class="content-inner">
                 <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
