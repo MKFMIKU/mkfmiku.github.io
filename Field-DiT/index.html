@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>TransDiF</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+    <link rel="stylesheet" href="/path/to/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery-highlight@3.5.0/jquery.highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                A Simple Diffusion Transformer on Unified Video, 3D, and Game Field Generation
+                <small>
+                </small>
+            </h2>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="#">
+                        <image src="https://img.icons8.com/plasticine/100/null/stack-of-paper.png" height="60px">
+                            <h4><strong>under review</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="super-mario-bros-1-1.zip">
+                        <image src="https://img.icons8.com/external-bearicons-outline-color-bearicons/64/null/external-Demo-miscellany-texts-and-badges-bearicons-outline-color-bearicons.png" height="60px">
+                            <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="#">
+                        <image src="https://img.icons8.com/plasticine/100/null/github-squared.png" height="60px">
+                            <h4><strong>Code (TBD)</strong></h4>
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="row"></div>
+        <div class="col-md-10 col-md-offset-1" style="padding: 4rem;">
+            <video src="transdiff.mp4" autoplay width="100%" loop controls></video>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1" style="background-color: #f2f2f2; font-family: sans-serif;">
+                <h3>
+                    Overview
+                </h3>
+                <p class="text-justify" style="font-size: 16px;">
+                    We propose a new diffusion field transfomer that unifies the image, video, 3D viewpoint, and game generation with the same network.
+                </p>
+                <img src="teaser.png" alt="" width="100%">
+
+                <p class="text-justify" style="font-size: 16px;"></p>
+                    We propose a new model comprising of a view-wise sampling algorithm to focus on local structure learning, and incorporating autoregressive generation to keep consistent global geometry.
+                    This is espically useful in game generation with infinite frames.
+                </p>
+                <img src="autoreg.png" alt="" width="100%">
+            </div>
+        </div>
+
+        <div class="row"></div>
+            <div class="col-md-10 col-md-offset-1">
+                <h3 class="text-center">
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Probabilistic field models the distribution of continuous functions defined over metric spaces.
+                    While they show great potential for unifying data generation of various modalities including images, videos, and 3D geometry, it only can generate simple results without generalizing to long-context.
+                    This can be attributed to their MLP architecture, where it is difficult for the model to capture global structures through uniform sampling.
+                    To this end, we propose a new and simple model comprising of a view-wise sampling algorithm to focus on local structure learning, and incorporating autoregressive generation to keep global geometry.
+                    The model can be scaled to generate high-fidelity data while unifying multiple modalities and preserving long-context, and tolerate with cross-modalities conditions like text-prompt for text-to-video generation, camera-pose for 3D view generation, and control actions for game generation.
+                    Experimental results on data generation in various modalities demonstrate the effectiveness of our model with a 675M model size, as well as its potential as a foundation framework for scalable modality-unified visual content generation.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1" style="padding-top: 2rem;">
+                <div>
+                    <h4>
+                        Game Generation
+                    </h4>
+                </div>
+
+                <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                    <hr class="dashed">
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <div>
+                        <video src="visual-games/games_0.mp4" width="100%" autoplay loop controls  />
+                    </div>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <div>
+                        <video src="visual-games/games_1.mp4" width="100%" autoplay loop controls  />
+                    </div>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <div>
+                        <video src="visual-games/games_2.mp4" width="100%" autoplay loop controls  />
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1" style="padding-top: 2rem;">
+                <div>
+                    <h4>
+                        Text-to-Video Generation (ours results generated by scaled up training on the webvid dataset)
+                    </h4>
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div>
+                            <video src="visual-webvid/ours_002.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                        <div>
+                            Prompt:
+                            <i><u>
+                                Female violinist rehearsing with headphones at the microphone. 4k.
+                            </i></u>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div>
+                            <video src="visual-webvid/ours_004.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                        <div>
+                            Prompt:
+                            <i><u>
+                                Health, environment care for mother earth. the girl's hands are holding a tree sapling. growth and agriculture new life concept. plant and tree breeding. saving life. biological diversity of plants.
+                            </i></u>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 text-center">
+                        <div>
+                            <video src="visual-webvid/ours_005.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                        <div>
+                            Prompt:
+                            <i><u>
+                                Little girl plays in the children's room. the kid plays about and throws his things out of the box. daughter plays with clothes at home.
+                            </i></u>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div>
+                            <video src="visual-webvid/ours_006.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                        <div>
+                            Prompt:
+                            <i><u>
+                                Pile of old tvs and retro television with green screen. dolly out. green screen. 4k resolution.
+                            </i></u>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div>
+                            <video src="visual-webvid/ours_007.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                        <div>
+                            Prompt:
+                            <i><u>
+                                Sun light rays through under water's glittering. underwater scene  full of bubbles up to sun.
+                            </i></u>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div>
+                            <video src="visual-webvid/ours_008.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                        <div>
+                            Prompt:
+                            <i><u>
+                                Hand in glove put covid 19 vaccination sign small shopping cart with vaccine ampoules on blue background soft focus.
+                            </i></u>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div>
+                            <video src="visual-webvid/ours_009.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                        <div>
+                            Prompt:
+                            <i><u>
+                                Star abstract retro tunnel loop neon glowing animation video template seamless loop.
+                            </i></u>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div>
+                            <video src="visual-webvid/ours_010.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                        <div>
+                            Prompt:
+                            <i><u>
+                                Hands of man placing components on pcb board. close up. zoom in. 4k resolution.
+                            </i></u>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div>
+                            <video src="visual-webvid/ours_011.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                        <div>
+                            Prompt:
+                            <i><u>
+                                Globe and mouse cursor on white background.
+                            </i></u>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1" style="padding-top: 2rem;">
+                <div>
+                    <h4>
+                        Text-to-Face Video (Visual Comparisons)
+                    </h4>
+                    More detailed text descriptions are used for inference.
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                        Prompt:
+                        <i><u>
+                            She is blurry and young.
+                            This female begins with a sad expression,
+                            and she then is surprised,
+                            she eventually is sad.
+                            This woman closes eyes while singing for a moderate time.
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>VDM</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/vdm_000004.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>CogVideo</span>
+                        <div>
+                            <img src="visual-comparisons-celebvt/cogvideo_000004.gif" width="100%" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>sDFT (ours)</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/ours_000004.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                        Prompt:
+                        <i><u>
+                            He has high cheekbones.
+                            This man starts with an expression of surprise,
+                            and he then has an expression of disgust,
+                            he eventually has an expression of surprise.
+                            This man talks meanwhile wagging head for a long time.
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>VDM</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/vdm_000005.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>CogVideo</span>
+                        <div>
+                            <img src="visual-comparisons-celebvt/cogvideo_000005.gif" width="100%" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>sDFT (ours)</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/ours_000005.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                        Prompt:
+                        <i><u>
+                            He is young. He has blond hair.
+                            This man begins with a disgusted expression,
+                            and next he has a disgusted face,
+                            and then he is angry, and hhe then turns into a disgusted face
+                            and afterwards he turns happy,
+                            and afterwards he turns disgusted,
+                            and he then turns into a disgusted face,
+                            and he then turns into a angry expression,
+                            and he then has a disgusted expression
+                            and later on he turns into a angry face,
+                            and next he is disgusted,
+                            and he then turns into a angry face,
+                            and later on he turns into a disgusted face,
+                            and he then is angry, in the end, he turns into a disgusted expression.
+                            The male talks, frowns, while shaking head for a long time.
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>VDM</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/vdm_000007.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>CogVideo</span>
+                        <div>
+                            <img src="visual-comparisons-celebvt/cogvideo_000007.gif" width="100%" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>sDFT (ours)</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/ours_000007.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                        Prompt:
+                        <i><u>
+                            She is young.
+                            At the beginning, this female is surprised,
+                            and afterwards she turns into a happy expression,
+                            she finally turns surprised.
+                            She first nods and talks at the same time for some time, next she laughs for a moderate time.
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>VDM</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/vdm_000008.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>CogVideo</span>
+                        <div>
+                            <img src="visual-comparisons-celebvt/cogvideo_000008.gif" width="100%" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>sDFT (ours)</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/ours_000008.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                        Prompt:
+                        <i><u>
+                            This person has sideburns and beard. 
+                            He is wearing goatee.
+                            Firstly, he gazes for a short time,
+                            and he then gazes for a short time,
+                            then he blinks for a short time,
+                            he finally blinks for a short time.
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>VDM</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/vdm_001498.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>CogVideo</span>
+                        <div>
+                            <img src="visual-comparisons-celebvt/cogvideo_001498.gif" width="100%" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>sDFT (ours)</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/ours_001498.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                        Prompt:
+                        <i><u>
+                            She has wavy hair and high cheekbones.
+                            To begin with, this female talks for a short time,
+                            and she then talks for a short time,
+                            next she talks for a short time,
+                            in the end, she talks for a short time.
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>VDM</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/vdm_001429.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>CogVideo</span>
+                        <div>
+                            <img src="visual-comparisons-celebvt/cogvideo_001429.gif" width="100%" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>sDFT (ours)</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/ours_001429.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                        Prompt:
+                        <i><u>
+                            A male is young. He has a big nose and high cheekbones.
+                            The man begins to talks for a short time,
+                            then he turns for a moderate time,
+                            in the end, he turns for a moderate time.
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>VDM</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/vdm_000145.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>CogVideo</span>
+                        <div>
+                            <img src="visual-comparisons-celebvt/cogvideo_000145.gif" width="100%" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>sDFT (ours)</span>
+                        <div>
+                            <video src="visual-comparisons-celebvt/ours_000145.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1" style="padding-top: 2rem;">
+                <div>
+                    <h4>
+                        3D Object Generation (Visual Comparisons)
+                    </h4>
+
+                    <div class="col-md-4 text-center">
+                        <span>GASP</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/gasp_000000.mp4" width="100%" autoplay loop controls />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>GEM</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/gem_000000.mp4" width="100%" autoplay loop controls />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>sDFT (ours)</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/ours_000000.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>GASP</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/gasp_000002.mp4" width="100%" autoplay loop controls />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>GEM</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/gem_000002.mp4" width="100%" autoplay loop controls />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>sDFT (ours)</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/ours_000002.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>GASP</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/gasp_000006.mp4" width="100%" autoplay loop controls />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>GEM</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/gem_000006.mp4" width="100%" autoplay loop controls />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>sDFT (ours)</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/ours_000006.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>GASP</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/gasp_000009.mp4" width="100%" autoplay loop controls />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>GEM</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/gem_000009.mp4" width="100%" autoplay loop controls />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>sDFT (ours)</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/ours_000009.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 2rem;">
+                        <hr class="dashed">
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>GASP</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/gasp_000013.mp4" width="100%" autoplay loop controls />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>GEM</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/gem_000013.mp4" width="100%" autoplay loop controls />
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>sDFT (ours)</span>
+                        <div>
+                            <video src="visual-comparisons-shapenet/ours_000013.mp4" width="100%" autoplay loop controls  />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    The website template was borrowed from <a href="https://jonbarron.info/mipnerf360/">Mip-NeRF
+                        360</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+</html>
