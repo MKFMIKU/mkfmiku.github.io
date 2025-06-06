@@ -163,6 +163,14 @@
       function msrn_stop() {
         document.getElementById('msrn_image').style.opacity = "0";
       }
+
+      function reface_start() {
+        document.getElementById('reface_image').style.opacity = "1";
+      }
+
+      function reface_stop() {
+        document.getElementById('reface_image').style.opacity = "0";
+      }
     </script>
 
 </head>
@@ -307,6 +315,35 @@
 
 
   <script id="pubs_by_date" language="text">
+
+  <tr onmouseout="reface_stop()" onmouseover="reface_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='reface_image'>
+                      <img src='images/reface_after.png' width="140">
+                    </div>
+                    <img src='images/reface_before.png' width="140">
+                  </div>
+                </td>
+    <td>
+      <div class="publication">
+      <br>
+      <p><strong>Reference-Guided Identity Preserving Face Restoration</strong>
+      <br>
+      <span class="collaborator">Mo Zhou, </span>
+      <span class="collaborator">Keren Ye, </span>
+      <span class="collaborator">Viraj Shah, </span>
+      Kangfu Mei,
+      <span class="collaborator"><a href="https://mdelbra.github.io">Mauricio Delbracio</a></span>
+      <span class="collaborator"><a href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a>, </span>
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a>, </span>
+      <span class="collaborator"><a href="https://research.google/people/hossein-talebi/">Hossein Talebi</a>, </span>
+      <br>
+      <a href="" target=""><b>Preprint 2025</b></a> /
+      <a href="https://arxiv.org/abs/2505.21905">Paper</a>
+      </div>
+    </td>
+  </tr> 
 
   <tr onmouseout="mmsr_stop()" onmouseover="mmsr_start()" class="content-inner">
   <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
@@ -689,6 +726,7 @@ hit counter"></a></div></noscript>
   hern_stop()
   pffnet_stop()
   msrn_stop()
+  reface_stop()
 </script>
 </body>
 </html>
