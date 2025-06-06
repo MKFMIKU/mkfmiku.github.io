@@ -1,0 +1,406 @@
+
+<!doctype html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <title>Kangfu Mei, Google</title>
+    <style>
+    h1 { padding : 0; margin : 0; }
+    body { padding : 20px 0; font-family : Arial; font-size : 16px; background-image : url("images/bg.png"); } 
+    #container { width : 900px; margin : 0 auto; background-color : #fff; padding : 50px;  text-align: left; box-shadow: 0px 0px 10px #999;; }
+    #me { margin-left : 25px; border : 0 solid black; float : right; margin-bottom : 0; margin-right:25px;}
+    #content { display : block; margin-right : 275px;}
+    a { text-decoration : none; }
+    a:hover { text-decoration : underline; }
+    a:link,a:visited
+    {color: #1367a7;}    
+
+    a.invisible { color : inherit; text-decoration : inherit; }
+    .publogo { margin-top : 20px; margin-right : 10px; float : left; border : 0; width: 200px; vertical-align: middle;}
+    
+    .publication { clear : left; padding-bottom : 10px; line-height:22px;}
+    .codelogo { margin-right : 10px; float : left; border : 0;}
+    .code { clear : left; padding-bottom : 10px; vertical-align :middle;} 
+    .code .download a { display : block; margin : 0 15px; float : left;}
+    #simpsons { margin : 5px auto; text-align : center; color : #B7B7B7; }
+
+    span.highlight,
+    span.highlight a:link,
+    span.highlight a:visited{color:#BB2222}
+
+    span.collaborator,
+    span.collaborator a:link,
+    span.collaborator a:visited{color:#666666}
+
+    /*Google logo colors*/
+    .g-blue{ color:#4285F4; }
+    .o-red{ color:#DB4437; }
+    .o-yellow{ color:#F4B400; }
+    .l-green{ color:#0F9D58; }
+    .e-red { display:inline-block;transform:rotate(-20deg); }
+
+    .content-inner {
+      top: -1;
+    }
+
+    .one {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.two {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.one img{
+  max-width: 100%; /* Ensure image is responsive */
+  max-height: 100%; /* Ensure image is responsive */
+}
+
+.two img{
+  max-width: 100%; /* Ensure image is responsive */
+  max-height: 100%; /* Ensure image is responsive */
+}
+
+.fade {
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+</style>
+
+    <script type="text/javascript">
+      function showPubs(id) {
+        if (id == 0) {
+          document.getElementById('pubs').innerHTML = document.getElementById('pubs_selected').innerHTML;
+          document.getElementById('select0').style = 'text-decoration:underline;color:#000000';
+          document.getElementById('select1').style = '';
+          // document.getElementById('select2').style = '';
+        } else if (id == 1) {
+          document.getElementById('pubs').innerHTML = document.getElementById('pubs_by_date').innerHTML;
+          document.getElementById('select1').style = 'text-decoration:underline;color:#000000';
+          document.getElementById('select0').style = '';
+          // document.getElementById('select2').style = '';
+        } 
+        // else {
+        //   document.getElementById('pubs').innerHTML = document.getElementById('pubs_by_topic').innerHTML;
+        //   document.getElementById('select2').style = 'text-decoration:underline;color:#000000';
+        //   document.getElementById('select0').style = '';
+        //   document.getElementById('select1').style = '';
+        // }
+      } 
+
+      function mmsr_start() {
+        document.getElementById('mmsr_image').style.opacity = "1";
+      }
+
+      function mmsr_stop() {
+        document.getElementById('mmsr_image').style.opacity = "0";
+      }
+
+      function sdft_start() {
+        document.getElementById('sdft_image').style.opacity = "1";
+      }
+
+      function sdft_stop() {
+        document.getElementById('sdft_image').style.opacity = "0";
+      }
+    </script>
+
+</head>
+<body>
+  <!--#F2F2F2-->
+    <center>
+    <div id="container">
+    <img src="images/Kangfu_DR.jpg" align = "right" width = 200>
+    <div id="content">
+
+    <h1>Kang-Fu Mei 梅康夫</h1>
+    <p>
+      Research Scientist @ Google<br>
+      <br>
+
+       <a href="mailto:mikumkf@gmail.com">Email</a> / <a href="https://scholar.google.com/citations?user=e_nu_TIAAAAJ&hl=en">Google scholar</a> / <a href="https://x.com/KangfuM">Twitter</a> / <a href="#misc">Misc.</a>
+
+    <h2>About Me</h2>   
+
+    <p>
+    I am a Research Scientist at <span class="g-blue">G</span><span
+                    class="o-red">o</span><span class="o-yellow">o</span><span class="g-blue">g</span><span
+                    class="l-green">l</span><span class="o-red e-red">e</span></span>.
+    </p>
+
+    <p>
+    My research lies at the intersection of Multimodal Generative AI and World Model. I am interested in building AI systems that can <b>simulate</b> our dynamic world for <b>creative control</b>, leveraging these capabilities to enable more robust autonomous systems or advance entertainment applications.
+    </p>
+
+    <p>
+    Over the past few years, I have worked on improving the controllability and sampling speed of generative models like GANs and diffusion mdoels on image and video generation. 
+    </p>
+
+    <p>
+    I received my Ph.D. from <a href="https://engineering.jhu.edu/ece/">ECE, Johns Hopkins University</a>, where I worked with <a href="https://engineering.jhu.edu/faculty/vishal-patel/"> Prof. Vishal M. Patel</a> 
+    I completed my M.S. at <a href="https://www.cuhk.edu.cn/en">The Chinese University of Hong Kong, Shenzhen</a>, where I was advised by <a href="https://sse.cuhk.edu.cn/en/faculty/huangrui">Rui Huang</a>.</p> 
+
+    <p><span class="highlight"><b>Prospective collaborators</b></span> I am always looking for motivated and talented students! If you are interested in collaborating or intern, please don't hesiate to drop me a e-mail</a>.
+    </p>
+
+  <br>
+  <!--<h6>Current/Past Affiliations</h6> -->
+  <center>
+    <table border="0" cellpadding="0" cellspacing="0" width="900" align="center" bgcolor="#FFFFFF">   
+      <tr>
+        <td width="20"></td>
+            <td width="120" align="center" valign="middle"><img src="images/Research-at-google.png" height="70" /></td>
+            <td width="120" align="center" valign="middle"><img src="images/adobe_logo.png" height="50" /></td>
+            <td width="120" align="center" valign="middle"><img src="images/JHU.logo_vertical.blue.png" height="80" /></td>            
+            <td width="120" align="center" valign="middle"><img src="images/cuhkszlogo.jpg" height="60" /></td>
+        <td width="20"></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+            <td width="120" align="center" valign="middle">2023 - Present</td>
+            <td width="120" align="center" valign="middle">Summer 2022</td>
+            <td width="120" align="center" valign="middle">2021 - 2024</td>
+            <td width="120" align="center" valign="middle">2014 - 2016</td>
+        <td width="20"></td>
+      </tr>
+
+  <tr>
+  <td colspan = 7>
+  <p>&nbsp;</p>
+    <h2>Recent News</h2>
+    <ul>
+        <li><sup><font color="red"><b>NEW</b></font></sup> <b>Feb 2025</b>: Our effort of <a href="https://mmsr.kfmei.com/">multimodal computational photography</a>  is accepeted by CVPR25. 📷
+        <br>
+
+        <li><sup><font color="red"><b>NEW</b></font></sup> <b>Jan 2025</b>: Our <a href="https://kfmei.com/Field-DiT/"> Filed Diffusion Transformer </a> for modalities-unified generation is accepted by ICLR25. 🧠</li>
+        <li><b>Jan 2025</b>: I am now Dr. Mei! Thank you, Prof. Patel, for your guidance and tremendous support! </li>
+    </ul>
+    </td>
+    </tr>
+
+  
+    <tr>
+  <td colspan = 7>
+  <p>&nbsp;</p>
+    <h2 style="display:inline;">Research Projects</h2>
+      &nbsp      
+      (<a href="" id="select0" onclick="showPubs(0); return false;">show selected</a> /
+       <a href="" id="select1" onclick="showPubs(1); return false;">show by date</a>) <!-- /
+       <a href="" id="select2" onclick="showPubs(2); return false;">show by topic</a>) -->        
+    <!--<div style="top:-10px; position:relative;">-->
+  <table border="0" cellpadding="0" cellspacing="0" width="900" align="center" bgcolor="#FFFFFF" id="pubs"></table>
+
+  <script id="pubs_selected" language="text">
+
+  <!-- Sun CNN -->
+  <tr>
+    <td>
+      <a href="https://youtu.be/tOVWptik0qI" target="_blank"><img border=0 src="img/lost2.gif" class="publogo"></a>
+    </td>
+    <td>
+      <div class="publication">
+      <p><strong>Find Your Way by Observing the Sun and Other Semantic Cues</strong>
+      <br>Wei-Chiu Ma, 
+      <span class="collaborator">Shenlong Wang, </span>
+      <span class="collaborator">Marcus A. Brubaker, </span>
+      <span class="collaborator">Sanja Fidler, </span>
+      <span class="collaborator">Raquel Urtasun </span>
+      <br>
+      <a href="" target="_new"><b>ICRA 2017</b></a> / 
+      <a href="http://arxiv.org/pdf/1606.07415.pdf" target="_new">arXiv</a> / 
+      <a href="https://youtu.be/tOVWptik0qI" target="_blank">demo video</a>
+      <br>
+      <span class="highlight"><b>Oral presentation</b></span>        
+      </div>
+    </td>
+  </tr>
+
+  </script>
+
+
+  <script id="pubs_by_date" language="text">
+
+  <tr onmouseout="mmsr_stop()" onmouseover="mmsr_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='mmsr_image'>
+                      <img src='images/mmsr_after.png' width="160">
+                    </div>
+                    <img src='images/mmsr_before.png' width="160">
+                  </div>
+                </td>
+    <td>
+      <div class="publication">
+      <br>
+      <p><strong>The Power of Context: How Multimodality Improves Image Super-Resolution</strong>
+      <br>
+      Kangfu Mei, <span class="collaborator"><a href="https://research.google/people/hossein-talebi/">Hossein Talebi</a>, </span>
+      <span class="collaborator">Mojtaba Ardakani, </span>
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a>, </span>
+      <span class="collaborator"><a href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a>, </span>
+       <span class="collaborator"><a href="https://mdelbra.github.io">Mauricio Delbracio</a></span>
+      <br>
+      <a href="" target=""><b>CVPR 2025</b></a> /
+      <a href="https://arxiv.org/abs/2503.14503">Paper</a> /
+      <a href="https://mmsr.kfmei.com/">project page</a>
+      </div>
+    </td>
+  </tr> 
+
+  <tr onmouseout="sdft_stop()" onmouseover="sdft_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+ <div class="one">
+                    <div class="two" id='sdft_image'>
+                      <video src='images/sdft_after.mp4' width="160" autoplay loop>
+                    </div>
+                    <video src='images/sdft_before.mp4' width="160" autoplay loop>
+                  </div>
+                </td>
+    <td>
+      <div class="publication">
+      <br>
+      <p><strong>Field-DiT: Diffusion Transformer on Unified Video, 3D, and Game Field Generation</strong>
+      <br>
+      Kangfu Mei, <span class="collaborator"><a href="https://cdluminate.github.io/">Mo Zhou</a>, </span>
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a></span>
+      <br>
+      <a href="" target=""><b>ICLR 2025</b></a> /
+      <a href="https://openreview.net/pdf?id=w6YS9A78fq">Paper</a> /
+      <a href="/Field-DiT/">project page</a> 
+      </div>
+    </td>
+  </tr>
+
+    <tr onmouseout="sdft_stop()" onmouseover="sdft_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+ <div class="one">
+                    <div class="two" id='sdft_image'>
+                      <video src='images/sdft_after.mp4' width="160" autoplay loop>
+                    </div>
+                    <video src='images/sdft_before.mp4' width="160" autoplay loop>
+                  </div>
+                </td>
+    <td>
+      <div class="publication">
+      <br>
+      <p><strong>Bigger is not Always Better: Scaling Properties of Latent Diffusion Models</strong>
+      <br>
+      Kangfu Mei, <span class="collaborator"><a href="https://vztu.github.io/">Zhengzhong Tu</a>, </span>
+      <span class="collaborator"><a href="https://cdluminate.github.io/">Mo Zhou</a>, </span>
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a></span>
+      <br>
+      <a href="" target=""><b>ICLR 2025</b></a> /
+      <a href="https://openreview.net/pdf?id=w6YS9A78fq">Paper</a> /
+      <a href="/Field-DiT/">project page</a> 
+      </div>
+    </td>
+  </tr>
+
+  </script>
+  </table>
+</div>
+  </td>
+  </tr>
+  
+
+  <tr>
+  <td colspan = 7>
+  <p>&nbsp;</p>
+    <h2 style="display:inline;">Thesis</h2>
+  <table border="0" cellpadding="0" cellspacing="0" width="900" align="center" bgcolor="#FFFFFF" id="pubs">
+
+  <tr>
+    <td>
+      <img border=0 src="img/mit-seal.png" class="publogo">
+    </td>
+    <td>
+      <div class="publication">
+      <br>
+      <p><strong>Learning 3D Modeling and Simulation From and For the Real World</strong>
+      <br>   
+      Wei-Chiu Ma 
+      <br>
+      <a href="papers/thesis.pdf" target=""><b>Ph.D. Thesis</b></a>    </div>
+    </td>
+  </tr>     
+
+  </table>
+
+  </td>
+  </tr>  
+
+  <tr>
+  <td colspan = 7>
+    <h2 id="misc">Misc.</h2>
+    <ul>
+        <li> I enjoy playing/watching all kinds of sports, including but not limited to badminton, basketball, baseball, tennis, running, etc. My favorite sports players and my favorite games (click their names!) are: 
+          <ul>
+          <li><a href="https://www.youtube.com/watch?v=GTJwoWHMEw0">Kobe Bryant</a> (basketball) </li>
+          <li> <a href="https://www.youtube.com/watch?v=rctOtFOXco8">Roger Federer</a> (tennis)</li>
+          <li> <a href="https://www.youtube.com/watch?v=Hf-n1yfd8II">Lee Chong Wei</a> (badminton)</li>
+          </ul>
+        </li>
+        <br>
+        <li> I like chinese pop music and my favorite singer is <a href="https://en.wikipedia.org/wiki/Jay_Chou">Jay Chou</a>. <!-- Here are a few personal favorite songs: -->      
+        </li>
+        <br>
+        <li> A few personal favorite papers/books/courses can be found <a href="misc/favorite-books-papers.html">here</a> (unordered and unfinished).</li>
+    </ul>
+    </td>
+    </tr>   
+  <!--
+  <tr>
+  <td colspan = 7>
+  <p>&nbsp;</p>
+    <h2>Collaborators</h2>
+    <ul>
+        <li>Over the past few years, I have had the fortune to work with a bunch of great people: <a href="http://www.cs.toronto.edu/~slwang/">Shenlong Wang</a> (UofT), <a href="http://www.cs.toronto.edu/~mbrubake/">Marcus A. Brubaker</a> (UofT)</li>
+    </ul>
+    </td>
+    </tr> -->
+  
+
+    </table>
+    </center>
+    </div>
+    </div>
+    <br><center><a href="https://www.cs.cornell.edu/~weichiu/">Template</a></center>
+    </center>
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=11104199; 
+var sc_invisible=1; 
+var sc_security="50dd2089"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="free hit
+counter" href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="//c.statcounter.com/11104199/0/50dd2089/1/" alt="free
+hit counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
+<script>
+  showPubs(1)
+  mmsr_stop()
+  sdft_stop()
+</script>
+</body>
+</html>
