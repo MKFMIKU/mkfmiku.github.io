@@ -1,681 +1,668 @@
-<!DOCTYPE HTML>
-<html lang="en">
 
+<!doctype html>
+<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <title>Kangfu Mei, Google Research</title>
+    <style>
+    h1 { padding : 0; margin : 0; }
+    body { padding : 20px 0; font-family : Arial; font-size : 16px; background-image : url("images/bg.png"); } 
+    #container { width : 900px; margin : 0 auto; background-color : #fff; padding : 50px;  text-align: left; box-shadow: 0px 0px 10px #999;; }
+    #me { margin-left : 25px; border : 0 solid black; float : right; margin-bottom : 0; margin-right:25px;}
+    #content { display : block; margin-right : 275px;}
+    a { text-decoration : none; }
+    a:hover { text-decoration : underline; }
+    a:link,a:visited
+    {color: #1367a7;}    
 
-  <title>Kangfu MEI's Homepage</title>
+    a.invisible { color : inherit; text-decoration : inherit; }
+    .publogo { margin-top : 20px; margin-right : 10px; float : left; border : 0; width: 200px; vertical-align: middle;}
+    
+    .publication { clear : left; padding-bottom : 10px; line-height:22px;}
+    .codelogo { margin-right : 10px; float : left; border : 0;}
+    .code { clear : left; padding-bottom : 10px; vertical-align :middle;} 
+    .code .download a { display : block; margin : 0 15px; float : left;}
+    #simpsons { margin : 5px auto; text-align : center; color : #B7B7B7; }
 
-  <meta name="author" content="Kangfu MEI">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    span.highlight,
+    span.highlight a:link,
+    span.highlight a:visited{color:#BB2222}
 
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
-  <style>
+    span.collaborator,
+    span.collaborator a:link,
+    span.collaborator a:visited{color:#666666}
+
     /*Google logo colors*/
     .g-blue{ color:#4285F4; }
     .o-red{ color:#DB4437; }
     .o-yellow{ color:#F4B400; }
     .l-green{ color:#0F9D58; }
     .e-red { display:inline-block;transform:rotate(-20deg); }
-    hr.solid {
-      border-top: 3px solid #bbb;
-    }
-    .content {
-      width: 100%;
-      height: 100%;
-    }
 
-    .content .header {
-      height: 50px;
-      position: sticky;
-      top: 0;
-      background-color: white;
-      z-index: 100;
-    }
     .content-inner {
       top: -1;
     }
-  </style>
+
+    .one {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.two {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.one img{
+  max-width: 100%; /* Ensure image is responsive */
+  max-height: 100%; /* Ensure image is responsive */
+}
+
+.two img{
+  max-width: 100%; /* Ensure image is responsive */
+  max-height: 100%; /* Ensure image is responsive */
+}
+
+.fade {
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+</style>
+
+    <script type="text/javascript">
+      function showPubs(id) {
+        if (id == 0) {
+          document.getElementById('pubs').innerHTML = document.getElementById('pubs_selected').innerHTML;
+          document.getElementById('select0').style = 'text-decoration:underline;color:#000000';
+          document.getElementById('select1').style = '';
+          // document.getElementById('select2').style = '';
+        } else if (id == 1) {
+          document.getElementById('pubs').innerHTML = document.getElementById('pubs_by_date').innerHTML;
+          document.getElementById('select1').style = 'text-decoration:underline;color:#000000';
+          document.getElementById('select0').style = '';
+          // document.getElementById('select2').style = '';
+        } 
+        // else {
+        //   document.getElementById('pubs').innerHTML = document.getElementById('pubs_by_topic').innerHTML;
+        //   document.getElementById('select2').style = 'text-decoration:underline;color:#000000';
+        //   document.getElementById('select0').style = '';
+        //   document.getElementById('select1').style = '';
+        // }
+      } 
+
+      function mmsr_start() {
+        document.getElementById('mmsr_image').style.opacity = "1";
+      }
+
+      function mmsr_stop() {
+        document.getElementById('mmsr_image').style.opacity = "0";
+      }
+
+      function sdft_start() {
+        document.getElementById('sdft_image').style.opacity = "1";
+      }
+
+      function sdft_stop() {
+        document.getElementById('sdft_image').style.opacity = "0";
+      }
+
+      function vidm_start() {
+        document.getElementById('vidm_image').style.opacity = "1";
+      }
+      function vidm_stop() {
+        document.getElementById('vidm_image').style.opacity = "0";
+      }
+
+      function d2sm_start() {
+        document.getElementById('d2sm_image').style.opacity = "1";
+      }
+
+      function d2sm_stop() {
+        document.getElementById('d2sm_image').style.opacity = "0";
+      }
+
+      function shadow_start() {
+        document.getElementById('shadow_image').style.opacity = "1";
+      }
+
+      function shadow_stop() {
+        document.getElementById('shadow_image').style.opacity = "0";
+      }
+
+      function hern_start() {
+        document.getElementById('hern_image').style.opacity = "1";
+      }
+
+      function hern_stop() {
+        document.getElementById('hern_image').style.opacity = "0";
+      }
+
+      function pffnet_start() {
+        document.getElementById('pffnet_image').style.opacity = "1";
+      }
+
+      function pffnet_stop() {
+        document.getElementById('pffnet_image').style.opacity = "0";
+      }
+
+      function msrn_start() {
+        document.getElementById('msrn_image').style.opacity = "1";
+      }
+
+      function msrn_stop() {
+        document.getElementById('msrn_image').style.opacity = "0";
+      }
+    </script>
+
 </head>
-
 <body>
-  <table
-    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr style="padding:0px">
-                <td style="padding:2.5%;width:63%;vertical-align:middle">
-                  <p style="text-align:center">
-                    <name>Kangfu MEI <span style="font-family: 'Ma Shan Zheng', cursive;">梅 康夫</span></name>
-                  </p>
-                  <p>I am a research scientist at <span class="g-blue">G</span><span
+  <!--#F2F2F2-->
+    <center>
+    <div id="container">
+    <img src="images/Kangfu_DR.jpg" align = "right" width = 200>
+    <div id="content">
+
+    <h1>Kang-Fu Mei 梅康夫</h1>
+    <p>
+      Research Scientist @ Google Research<br>
+      <br>
+
+       <a href="mailto:mikumkf@gmail.com">Email</a> / <a href="https://scholar.google.com/citations?user=e_nu_TIAAAAJ&hl=en">Google Scholar</a> / <a href="https://x.com/KangfuM">Twitter</a> / <a href="#misc">Misc.</a>
+
+    <h2>About Me</h2>   
+
+    <p>
+    I am a Research Scientist at <span class="g-blue">G</span><span
                     class="o-red">o</span><span class="o-yellow">o</span><span class="g-blue">g</span><span
-                    class="l-green">l</span><span class="o-red e-red">e</span></span> AI Innovation & Research (AIR). I got my Ph.D. degree at <a href="hhttps://www.jhu.edu"> Johns Hopkins University </a>, advised by <a href="https://engineering.jhu.edu/vpatel36/sciencex_teams/vishalpatel/"> Prof. Vishal Patel </a>, where I work on multimodal generative models.
-                    <!-- I got my M.Phil degree (2019 - 2021) at <a href="https://www.cuhk.edu.cn/en">The Chinese University of Hong Kong, Shenzhen</a>, advised by <a href="https://myweb.cuhk.edu.cn/ruihuang"> Prof. Rui Huang</a>. -->
-                  </p>
+                    class="l-green">l</span><span class="o-red e-red">e</span></span> Research.
+    </p>
 
-                  <p>
-                    I got my M.Phil degree (2019 - 2021) at <a href="https://www.cuhk.edu.cn/en">The Chinese University of Hong Kong, Shenzhen</a> with the major in Computer Science and Engineering.
-                    I got my B.S degree (2015 - 2019) at <a href="https://www.jxnu.edu.cn">Jiangxi Normal University</a> with the major in Computer Science and Technology.
-                  </p>
-                  <!-- <p style="font-size: larger;color: crimson;">I am open to full-time job opportunities starting early in 2025.</p> -->
-                  <!-- <p>
-                    I am a Research Intern at <span class="g-blue">G</span><span
-                    class="o-red">o</span><span class="o-yellow">o</span><span class="g-blue">g</span><span
-                    class="l-green">l</span><span class="o-red e-red">e</span></span> Research (<i>Jun 2023 - Now</i>).
-                  </p> -->
-                  <p>
-                    I previously interned at: <a href="https://research.adobe.com">Adobe Research <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/null/external-Adobe-logos-and-brands-those-icons-lineal-color-those-icons.png"/></a> &nbsp/&nbsp
-                    <a href="https://damo.alibaba.com/?lang=en">DAMO Academy</a> <img src="https://img.icons8.com/color/24/null/taobao.png"/> &nbsp/&nbsp
-                    <a href="http://www.kwai.com/aboutus">Kuaishou</a> <img src="https://img.icons8.com/external-regular-kawalan-studio/24/ff5000/external-kwai-social-media-regular-kawalan-studio.png"/> &nbsp/&nbsp
-                    <a href="https://www.jddglobal.com/en/">JD.COM</a>
-                  </p>
-                  <p style="text-align:center">
-                    <a href="https://kfmei.com/data/Kangfu_CV.pdf">CV</a> &nbsp/&nbsp
-                    <a href="mailto:mikumkf@gmail.com">Email</a> &nbsp/&nbsp
-                    <a href="https://scholar.google.com/citations?user=e_nu_TIAAAAJ&hl=en">Google Scholar</a>
-                    &nbsp/&nbsp
-                    <a href="https://github.com/MKFMIKU">Github</a> &nbsp/&nbsp
-                    <a href="https://photo.kfmei.com"><span class="highlight">Photography</span></a>
-                  </p>
-                </td>
-                <td style="padding:2.5%;width:40%;max-width:40%">
-                  <a href="images/Kangfu.jpg"><img style="width:80%;max-width:80%;" alt="profile photo"
-                      src="images/Kangfu.jpg" class="hoverZoomLink"></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:100%;vertical-align:middle">
-                  <heading>Research</heading>
-                  <p>
-                    I have strong interests in:
-                    <ul>
-                      <li>A. Image, Video, and 3D generation with diffusion and auto-regressive models.</li>
-                      <li>B. Robot imitation learning from videos for general policy generation. </li>
-                    </ul>
-                    Representative papers are <span class="highlight">highlighted</span>.
-                  </p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:100%;vertical-align:middle">
-                  <heading>Updates</heading>
-                  <ul>
-                    <li><b>[Feb 26, 2025]</b> Our effort of multimodal computational photography is accepeted by CVPR25. 📷 </li>
-                    <li><b>[Jan 22, 2025]</b> The generative field community now wins the second attempt by us in ICLR25. 🧠 </li>
-                    <li><b>[Jan 16, 2025]</b> Defensed my phd thesis. I am a Doctor now !!! 👨‍⚕️</li>
-                    <li><b>[Jan 15, 2025]</b> I gave a talk (in Chinese) about my recent efficent image generation work at <a href="https://www.techbeat.net/talk-info?id=939">TechBeat</a> 📰</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+    <p>
+    My research lies at the intersection of Multimodal Generative AI and World Model. I am interested in building AI systems that can <b>simulate</b> our dynamic world for <b>creative control</b>, leveraging these capabilities to enable more robust autonomous systems or advance entertainment applications.
+    </p>
 
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody class="content">
+    <p>
+    Over the past few years, I have worked on improving the controllability and sampling speed of generative models like GANs and diffusion mdoels on image and video generation. 
+    </p>
 
-              <tr  class="header">
-                <td style="padding-left:20px; padding-top: 10px;width: 25%;">
-                  <heading>2025</heading>
-                  <hr class="solid">
-                </td>
-                <td style="width: 75%;"></td>
-              </tr>
+    <p>
+    I received my Ph.D. from <a href="https://engineering.jhu.edu/ece/">ECE, Johns Hopkins University</a>, where I worked with <a href="https://engineering.jhu.edu/faculty/vishal-patel/"> Prof. Vishal M. Patel</a> 
+    I completed my M.S. at <a href="https://www.cuhk.edu.cn/en">The Chinese University of Hong Kong, Shenzhen</a>, where I was advised by <a href="https://sse.cuhk.edu.cn/en/faculty/huangrui">Prof. Rui Huang</a>.</p> 
 
-              <tr onmouseout="mmsr_stop()" onmouseover="mmsr_start()" class="content-inner">
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+    <p><span class="highlight"><b>Prospective collaborators:</b></span> I am always looking for motivated and talented students! If you are interested in collaborating or intern, please don't hesiate to drop me a e-mail</a>.
+    </p>
+
+  <br>
+  <!--<h6>Current/Past Affiliations</h6> -->
+  <center>
+    <table border="0" cellpadding="0" cellspacing="0" width="900" align="center" bgcolor="#FFFFFF">   
+      <tr>
+        <td width="20"></td>
+            <td width="120" align="center" valign="middle"><img src="images/Research-at-google.png" height="70" /></td>
+            <td width="120" align="center" valign="middle"><img src="images/adobe_logo.png" height="50" /></td>
+            <td width="120" align="center" valign="middle"><img src="images/JHU.logo_vertical.blue.png" height="80" style="padding-bottom:-19px" /></td>            
+            <td width="120" align="center" valign="middle"><img src="images/damo_logo.jpeg" height="90" style="padding-bottom:-9px" /></td>            
+            <td width="120" align="center" valign="middle"><img src="images/cuhkszlogo.jpg" height="70" /></td>
+        <td width="20"></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+            <td width="120" align="center" valign="middle">2023 - Present</td>
+            <td width="120" align="center" valign="middle">Summer 2022</td>
+            <td width="120" align="center" valign="middle">2021 - 2024</td>
+            <td width="120" align="center" valign="middle">Summer 2020</td>
+            <td width="120" align="center" valign="middle">2019 - 2021</td>
+        <td width="20"></td>
+      </tr>
+
+  <tr>
+  <td colspan = 7>
+  <p>&nbsp;</p>
+    <h2>Recent News</h2>
+    <ul>
+        <li><sup><font color="red"><b>NEW</b></font></sup> <b>Feb 2025</b>: <a href="https://mmsr.kfmei.com/">MMSR</a>  is accepeted by CVPR25. 📷
+        <br>
+
+        <li><sup><font color="red"><b>NEW</b></font></sup> <b>Jan 2025</b>: <a href="https://kfmei.com/Field-DiT/"> Field-DiT </a> is accepted by ICLR25. 🧠</li>
+        <li><b>Jan 2025</b>: I am now Dr. Mei! Thank you, Prof. Patel, for your guidance and tremendous support! </li>
+    </ul>
+    </td>
+    </tr>
+
+  
+    <tr>
+  <td colspan = 7>
+  <p>&nbsp;</p>
+    <h2 style="display:inline;">Research Projects</h2>
+      &nbsp      
+      (<a href="" id="select0" onclick="showPubs(0); return false;">show selected</a> /
+       <a href="" id="select1" onclick="showPubs(1); return false;">show by date</a>) <!-- /
+       <a href="" id="select2" onclick="showPubs(2); return false;">show by topic</a>) -->        
+    <!--<div style="top:-10px; position:relative;">-->
+  <table border="0" cellpadding="0" cellspacing="0" width="900" align="center" bgcolor="#FFFFFF" id="pubs"></table>
+
+  <script id="pubs_selected" language="text">
+
+  <!-- Sun CNN -->
+  <tr>
+    <td>
+      <a href="https://youtu.be/tOVWptik0qI" target="_blank"><img border=0 src="img/lost2.gif" class="publogo"></a>
+    </td>
+    <td>
+      <div class="publication">
+      <p><strong>Find Your Way by Observing the Sun and Other Semantic Cues</strong>
+      <br>Wei-Chiu Ma, 
+      <span class="collaborator">Shenlong Wang, </span>
+      <span class="collaborator">Marcus A. Brubaker, </span>
+      <span class="collaborator">Sanja Fidler, </span>
+      <span class="collaborator">Raquel Urtasun </span>
+      <br>
+      <a href="" target="_new"><b>ICRA 2017</b></a> / 
+      <a href="http://arxiv.org/pdf/1606.07415.pdf" target="_new">arXiv</a> / 
+      <a href="https://youtu.be/tOVWptik0qI" target="_blank">demo video</a>
+      <br>
+      <span class="highlight"><b>Oral presentation</b></span>        
+      </div>
+    </td>
+  </tr>
+
+  </script>
+
+
+  <script id="pubs_by_date" language="text">
+
+  <tr onmouseout="mmsr_stop()" onmouseover="mmsr_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='mmsr_image'>
                       <img src='images/mmsr_after.png' width="160">
                     </div>
                     <img src='images/mmsr_before.png' width="160">
                   </div>
-                  <script type="text/javascript">
-                    function mmsr_start() {
-                      document.getElementById('mmsr_image').style.opacity = "1";
-                    }
+                </td>
+    <td>
+      <div class="publication">
+      <br>
+      <p><strong>The Power of Context: How Multimodality Improves Image Super-Resolution</strong>
+      <br>
+      Kangfu Mei, <span class="collaborator"><a href="https://research.google/people/hossein-talebi/">Hossein Talebi</a>, </span>
+      <span class="collaborator">Mojtaba Ardakani, </span>
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a>, </span>
+      <span class="collaborator"><a href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a>, </span>
+       <span class="collaborator"><a href="https://mdelbra.github.io">Mauricio Delbracio</a></span>
+      <br>
+      <a href="" target=""><b>CVPR 2025</b></a> /
+      <a href="https://arxiv.org/abs/2503.14503">Paper</a> /
+      <a href="https://mmsr.kfmei.com/">Project page</a>
+      </div>
+    </td>
+  </tr> 
 
-                    function mmsr_stop() {
-                      document.getElementById('mmsr_image').style.opacity = "0";
-                    }
-                    mmsr_stop()
-                  </script>
-                </td>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
-                  <a href="https://mmsr.kfmei.com/">
-                    <papertitle>The Power of Context: How Multimodality Improves Image Super-Resolution</papertitle>
-                  </a>
-                  <br>
-                  <span class="author-block">
-                    <strong>Kangfu Mei</strong>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://research.google/people/hossein-talebi/">Hossein Talebi</a></sup>,
-                  </span>
-                  <span class="author-block">
-                   Mojtaba Ardakani</sup>,</span>
-                   <span class="author-block">
-                    <a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a></sup>,
-                    <span class="author-block">
-                      <a href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a>
-                    </span>
-                  </span>
-                  <span class="author-block">
-                    <a href="https://mdelbra.github.io">Mauricio Delbracio</a></span>
-                  <br>
-                  <em>CVPR 2025</em>
-                  <br>
-                  <a href="https://drive.google.com/file/d/1hKS2HgL5NEcqurXoXDpyarKRnjTDtmRo/view?usp=sharing">PDF</a> / 
-                  <a href="https://mmsr.kfmei.com/">project page</a>
-                  <p></p>
-                  <p> A novel approach that leverages the rich contextual information available in multiple modalities including depth, segmentation, edges, and text prompts to learn a powerful generative prior for SISR within a diffusion model framework</p>
-                </td>
-              </tr>
-            
-              <tr  class="header">
-                <td style="padding-left:20px; padding-top: 10px;width: 25%;">
-                  <heading>2024</heading>
-                  <hr class="solid">
-                </td>
-                <td style="width: 75%;"></td>
-              </tr>
-
-              <tr onmouseout="sdft_stop()" onmouseover="sdft_start()" class="content-inner" bgcolor="#ffffd0">
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='sdft_image'>
-                      <video src='images/sdft_before.mp4' width="160" autoplay loop>
-                    </div>
-                    <video src='images/sdft_after.mp4' width="160" autoplay loop>
-                  </div>
-                  <script type="text/javascript">
-                    function sdft_start() {
-                      document.getElementById('sdft_image').style.opacity = "1";
-                    }
-
-                    function sdft_stop() {
-                      document.getElementById('sdft_image').style.opacity = "0";
-                    }
-                    sdft_stop()
-                  </script>
-                </td>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
-                  <a href="/Field-DiT/">
-                    <papertitle>Field-DiT: Diffusion Transformer on Unified Video, 3D, and Game Field Generation</papertitle>
-                  </a>
-                  <br>
-                  <span class="author-block">
-                    <strong>Kangfu Mei</strong>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://cdluminate.github.io/">Mo Zhou</a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a>,
-                  </span>
-                  <br>
-                  <em>ICLR 2025</em>
-                  <br>
-                  <a href="/Field-DiT/">project page</a> / <a href="https://openreview.net/pdf?id=w6YS9A78fq">OpenReview</a> / <a href="https://docs.google.com/presentation/d/12PVAcHc_UvaqZvHm0VK4b6jEocbLJYOJp3Uu9DjY7FQ/edit?usp=sharing">Talk</a> / <a href="https://github.com/MKFMIKU/Field-DiT">Code</a>
-                  <p></p>
-                  <p>A generative filed model that can generate image, video, and 3D data in a single unified network architecture. The unification can boost video generation with 3D prior in multi-task learning, with the 10 times smaller model size than SORA.</p>
-                </td>
-              </tr>
-            
-  
-              <tr onmouseout="bid_stop()" onmouseover="bid_start()" class="content-inner">
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <img src='images/scaling.png' width="160">
+  <tr class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+ <div class="one">
+                      <img src='images/sdft_after.gif' width="140"></img>
                   </div>
                 </td>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/2404.01367">
-                    <papertitle>Bigger is not Always Better: Scaling Properties of Latent Diffusion Models</papertitle>
-                  </a>
-                  <br>
-                  <span class="author-block">
-                    <strong>Kangfu Mei</strong>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://www.linkedin.com/in/zhengzhong-tu-92419790/">Zhengzhong Tu</a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://mdelbra.github.io">Mauricio Delbracio</a></span>,
-                  <span class="author-block">
-                    <a href="https://research.google/people/hossein-talebi/">Hossein Talebi</a></sup>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a>
-                  </span>
-                  <br>
-                  <em>TMLR 2024</em>
-                  <br>
-                  <!-- <a href="bi-noising">Project Page</a> / -->
-                  <a href="https://arxiv.org/abs/2404.01367">arXiv</a>
-                  <p></p>
-                  <p>The first work that throughly investigates the scaling properties of the recent trending latent diffsuion models (e.g., the representative StableDiffusion).</p>
-                </td>
-              </tr>
+    <td>
+      <div class="publication">
+      <br>
+      <p><strong>Field-DiT: Diffusion Transformer on Unified Video, 3D, and Game Field Generation</strong>
+      <br>
+      Kangfu Mei, <span class="collaborator"><a href="https://cdluminate.github.io/">Mo Zhou</a>, </span>
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a></span>
+      <br>
+      <a href="" target=""><b>ICLR 2025</b></a> /
+      <a href="https://openreview.net/pdf?id=w6YS9A78fq">Paper</a> /
+      <a href="/Field-DiT/">Project page</a> 
+      </div>
+    </td>
+  </tr>
 
-              <tr class="header">
-                <td style="padding-left:20px; padding-top: 10px;">
-                  <heading>2023</heading>
-                  <hr class="solid">
-                </td>
-                <td style="width: 75%;"></td>
-              </tr>
+  <tr class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+    <div class="one">
+      <div class="two">
+        <img src='images/scaling.png' width="160">
+      </div>
+      <img src='images/scaling.png' width="160">
+    </div>
+  </td>
+  <td>
+    <div class="publication">
+      <br>
+      <p><strong>Bigger is not Always Better: Scaling Properties of Latent Diffusion Models</strong>
+      <br>
+      Kangfu Mei, <span class="collaborator"><a href="https://vztu.github.io/">Zhengzhong Tu</a>, </span>
+      <span class="collaborator"><a href="https://mdelbra.github.io">Mauricio Delbracio</a>,</span>
+      <span class="collaborator"><a href="https://research.google/people/hossein-talebi/">Hossein Talebi</a>, </span>
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a>,</span>
+      <span class="collaborator"><a href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a></span>
+      <br>
+      <a href="" target=""><b>TMLR 2025</b></a> /
+      <a href="https://arxiv.org/abs/2404.01367">Paper</a> /
+      <a href="https://openreview.net/forum?id=0u7pWfjri5">OpenReview</a> 
+      </div>
+    </td>
+  </tr>
 
-                            
-              <tr bgcolor="#ffffd0" class="content-inner">
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <img src='images/codi.jpg' width="160">
-                  </div>
-                </td>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
-                  <a href="https://fast-codi.github.io/">
-                    <papertitle>CoDi: Conditional Diffusion Distillation for Higher-Fidelity and Faster Image Generation</papertitle>
-                  </a>
-                  <br>
-                  <span class="author-block">
-                    <strong>Kangfu Mei</strong>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://mdelbra.github.io">Mauricio Delbracio</a></span>,
-                  <span class="author-block">
-                    <a href="https://research.google/people/hossein-talebi/">Hossein Talebi</a></sup>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://www.linkedin.com/in/zhengzhong-tu-92419790/">Zhengzhong Tu</a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a>
-                  </span>
-                  <br>
-                  
-                  <em>CVPR 2024</em>
-                  <br>
-                  <a href="https://fast-codi.github.io/">project page</a> /
-                  <a href="https://arxiv.org/abs/2310.01407">arXiv</a>
-                  <p></p>
-                  <p>Faster conditional diffusion that produces high-quality images with 1-4 sampling steps.</p>
-                </td>
-              </tr>
+  <tr class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+    <div class="one">
+      <div class="two">
+        <img src='images/codi.jpg' width="140">
+      </div>
+      <img src='images/codi.jpg' width="140">
+    </div>
+  </td>
+  <td>
+    <div class="publication">
+      <br>
+      <p><strong>CoDi: Conditional Diffusion Distillation for Higher-Fidelity and Faster Image Generation</strong>
+      <br>
+      Kangfu Mei, 
+      <span class="collaborator"><a href="https://mdelbra.github.io">Mauricio Delbracio</a>,</span>
+      <span class="collaborator"><a href="https://research.google/people/hossein-talebi/">Hossein Talebi</a>, </span>
+      <span class="collaborator"><a href="https://vztu.github.io/">Zhengzhong Tu</a>, </span>
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a>,</span>
+      <span class="collaborator"><a href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a></span>
+      <br>
+      <a href="" target=""><b>CVPR 2024</b></a> /
+      <a href="https://arxiv.org/abs/2310.01407">Paper</a> /
+      <a href="https://fast-codi.github.io/">Project Page</a> 
+      </div>
+    </td>
+  </tr>
 
-              <tr onmouseout="vidm_stop()" onmouseover="vidm_start()" bgcolor="#ffffd0">
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='vidm_image'>
-                      <img src='vidm/results/taichi/vidm.gif' width="160">
-                    </div>
-                    <img src='vidm/results/sky/vidm.gif' width="160">
-                  </div>
-                  <script type="text/javascript">
-                    function vidm_start() {
-                      document.getElementById('vidm_image').style.opacity = "1";
-                    }
+  <tr onmouseout="vidm_stop()" onmouseover="vidm_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+    <div class="one">
+      <div class="two" id="vidm_image">
+        <img src='vidm/results/taichi/vidm.gif' width="140">
+      </div>
+      <img src='vidm/results/sky/vidm.gif' width="140">
+    </div>
+  </td>
+  <td>
+    <div class="publication">
+      <br>
+      <p><strong>VIDM: Video Implicit Diffusion Models</strong>
+      <br>
+      Kangfu Mei, 
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a></span>
+      <br>
+      <a href="" target=""><b>AAAI 2023 (Oral)</b></a> /
+      <a href="https://arxiv.org/abs/2212.00235">Paper</a> /
+      <a href="/vidm">Project Page</a> 
+      </div>
+    </td>
+  </tr>
 
-                    function vidm_stop() {
-                      document.getElementById('vidm_image').style.opacity = "0";
-                    }
-                    vidm_stop()
-                  </script>
-                </td>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
-                  <a href="vidm/">
-                    <papertitle>VIDM: Video Implicit Diffusion Models</papertitle>
-                  </a>
-                  <br>
-                  <strong>Kangfu Mei</strong>,
-                  <a href="https://engineering.jhu.edu/vpatel36/sciencex_teams/vishalpatel/">Vishal M. Patel</a>,
-                  <br>
-                  <em>AAAI</em>, 2023 <span style="padding-left:.1rem; padding-right:.1rem; background-color: #FBCBCB; color: #e34234;"><i><b>Oral Presentation</b></i></span>
-                  <br>
-                  <a href="vidm/">project page</a> /
-                  <a href="https://arxiv.org/abs/2212.00235">arXiv</a>
-                  <p></p>
-                  <p>Video Generation Diffusion Models By Using Implicit Motiion Condition.</p>
-                </td>
-              </tr>
+  <tr onmouseout="shadow_stop()" onmouseover="shadow_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+    <div class="one">
+      <div class="two" id='shadow_image'>
+        <img src='images/shadow_before.jpg' width="140">
+      </div>
+      <img src='images/shadow_after.png' width="140">
+      </div>
+  </td>
+  <td>
+    <div class="publication">
+      <br>
+      <p><strong>Latent Feature-Guided Diffusion Models for Shadow Removal</strong>
+      <br>
+      Kangfu Mei, 
+      <span class="collaborator"><a href="#">Luis Figueroa</a>,</span>
+      <span class="collaborator"><a href="#">Zhe Lin</a>,</span>
+      <span class="collaborator"><a href="#">Zhihong Ding</a>,</span>
+      <span class="collaborator"><a href="#">Scott Cohen</a>,</span>
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a></span>
+      <br>
+      <a href="" target=""><b>WACV 2023</b></a> /
+      <a href="https://arxiv.org/abs/2312.02156">Paper</a> /
+      <a href="/shadow-diffusion/">Project Page</a> 
+      </div>
+    </td>
+  </tr>
 
-              <tr class="header">
-                <td style="padding-left:20px; padding-top: 10px;">
-                  <heading>2022</heading>
-                  <hr class="solid">
-                </td>
-                <td style="width: 75%;"></td>
-              </tr>
+  <tr onmouseout="d2sm_stop()" onmouseover="d2sm_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+    <div class="one">
+      <div class="two" id='d2sm_image'>
+        <img src='images/d2sm_after.png' width="140">
+      </div>
+      <img src='images/d2sm_before.png' width="140">
+      </div>
+  </td>
+  <td>
+    <div class="publication">
+      <br>
+      <p><strong>Deep Semantic Statistics Matching (D2SM) Denoising Network</strong>
+      <br>
+      Kangfu Mei, 
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel,</a></span>
+      <span class="collaborator"><a href="https://sse.cuhk.edu.cn/en/faculty/huangrui">Rui Huang</a></span>
+      <br>
+      <a href="" target=""><b>ECCV 2022</b></a> /
+      <a href="https://arxiv.org/abs/2207.09302">Paper</a> /
+      <a href="/d2sm">Project Page</a> 
+      </div>
+    </td>
+  </tr>
 
-              <tr onmouseout="d2sm_stop()" onmouseover="d2sm_start()" bgcolor="#ffffd0">
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='d2sm_image'>
-                      <img src='images/d2sm_after.png' width="160">
-                    </div>
-                    <img src='images/d2sm_before.png' width="160">
-                  </div>
-                  <script type="text/javascript">
-                    function d2sm_start() {
-                      document.getElementById('d2sm_image').style.opacity = "1";
-                    }
+  <tr class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+    <div class="one">
+      <img src='images/lttgan.jpg' width="140">
+    </div>
+  </td>
+  <td>
+    <div class="publication">
+      <br>
+      <p><strong>LTT-GAN: Looking Through Turbulence by Inverting GANs</strong>
+      <br>
+      Kangfu Mei, 
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a></span>
+      <br>
+      <a href="" target=""><b>IEEE JSTSP</b></a> /
+      <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4200690">Paper</a> /
+      <a href="https://arxiv.org/abs/2112.02379">arXiv</a> 
+      </div>
+    </td>
+  </tr>
 
-                    function d2sm_stop() {
-                      document.getElementById('d2sm_image').style.opacity = "0";
-                    }
-                    d2sm_stop()
-                  </script>
-                </td>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
-                  <a href="d2sm">
-                    <papertitle>Deep Semantic Statistics Matching (D2SM) Denoising Network</papertitle>
-                  </a>
-                  <br>
-                  <strong>Kangfu Mei</strong>,
-                  <a href="https://engineering.jhu.edu/vpatel36/sciencex_teams/vishalpatel/">Vishal M. Patel</a>,
-                  <a href="https://myweb.cuhk.edu.cn/ruihuang">Rui Huang</a>
-                  <br>
-                  <em>ECCV</em>, 2022
-                  <br>
-                  <a href="d2sm">project page</a> /
-                  <a href="https://arxiv.org/abs/2207.09302">arXiv</a> / 
-                  <a href="d2sm/d2sm-poster.pdf">poster</a>
-                  <p></p>
-                  <p>A New General Plug-and-play Component For Denoising</p>
-                </td>
-              </tr>
+  <tr class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+    <div class="one">
+      <img src='images/attanet.png' width="140">
+    </div>
+  </td>
+  <td>
+    <div class="publication">
+      <br>
+      <p><strong>AttaNet: Attention-Augmented Network for Fast and Accurate Scene Parsing</strong>
+      <br>
+      <span class="collaborator"><a href="#">Qi Song</a>,</span>
+      Kangfu Mei,
+      <span class="collaborator"><a href="https://sse.cuhk.edu.cn/en/faculty/huangrui">Rui Huang</a></span>
+      <br>
+      <a href="" target=""><b>AAAI 2021</b></a> /
+      <a href="https://arxiv.org/abs/2103.05930">arXiv</a> 
+      </div>
+    </td>
+  </tr>
 
-              <tr onmouseout="shadow_stop()" onmouseover="shadow_start()">
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='shadow_image'>
-                      <img src='images/shadow_after.png' width="160">
-                    </div>
-                    <img src='images/shadow_before.jpg' width="160">
-                  </div>
-                  <script type="text/javascript">
-                    function shadow_start() {
-                      document.getElementById('shadow_image').style.opacity = "1";
-                    }
+  <tr onmouseout="hern_stop()" onmouseover="hern_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+    <div class="one">
+      <div class="two" id='hern_image'>
+        <img src='images/hern_after.jpg' width="140">
+      </div>
+      <img src='images/hern_before.jpg' width="140">
+      </div>
+  </td>
+  <td>
+    <div class="publication">
+      <br>
+      <p><strong>Higher-resolution network for image demosaicing and enhancing</strong>
+      <br>
+      Kangfu Mei, 
+      <span class="collaborator"><a href="https://junchenglee.com/">Juncheng Li</a>,</span>
+      <span class="collaborator"><a href="#">Jiajie Zhang</a>,</span>
+      <span class="collaborator"><a href="#">Haoyu Wu</a>,</span>
+      <span class="collaborator"><a href="#">Jie Li</a>,</span>
+      <span class="collaborator"><a href="https://sse.cuhk.edu.cn/en/faculty/huangrui">Rui Huang</a></span>
+      <br>
+      <a href="" target=""><b>ICCVW 2019 (1st in AIM RAW to RGB mapping challenge)</b></a> /
+      <a href="https://arxiv.org/abs/1911.08098">Paper</a>
+      </div>
+    </td>
+  </tr>
 
-                    function shadow_stop() {
-                      document.getElementById('shadow_image').style.opacity = "0";
-                    }
-                    shadow_stop()
-                  </script>
-                </td>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
-                  <a
-                    href="shadow-diffusion/">
-                    <papertitle>Latent Feature-Guided Diffusion Models for Shadow Removal</papertitle>
-                  </a>
-                  <br>
-                  <strong>Kangfu Mei</strong>, Luis Figueroa, Zhe Lin, Zhihong Ding, Scott Cohen,
-                  <a href="https://engineering.jhu.edu/vpatel36/sciencex_teams/vishalpatel/">Vishal M. Patel</a>
-                  <br>
-                  <em>WACV</em>, 2023
-                  <br>
-                  <a href="shadow-diffusion/">project page</a> /
-                  <a href="https://github.com/MKFMIKU/Instance-Shadow-Diffusion">code</a> /
-                  <a href="https://huggingface.co/spaces/MKFMIKU/Instance-Shadow-Removal">demo</a> /
-                  <a href="https://arxiv.org/abs/2312.02156">arXiv</a>
-                  <p></p>
-                  <p>We (together with Adobe) conducted this very early exploration of applying diffusion models on shadow removal. This proposes the first instance-level shadow removal task.</p>
-                </td>
-              </tr>
 
-              <tr class="header">
-                <td style="padding-left:20px; padding-top: 10px;">
-                  <heading>2021</heading>
-                  <hr class="solid">
-                </td>
-                <td style="width: 75%;"></td>
-              </tr>
+  <tr onmouseout="pffnet_stop()" onmouseover="pffnet_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+    <div class="one">
+      <div class="two" id='pffnet_image'>
+        <img src='images/pffnet_after.png' width="140">
+      </div>
+      <img src='images/pffnet_before.png' width="140">
+      </div>
+  </td>
+  <td>
+    <div class="publication">
+      <br>
+      <p><strong>Progressive Feature Fusion Network for Realistic Image Dehazing</strong>
+      <br>
+      Kangfu Mei, 
+      <span class="collaborator"><a href="#">Aiwen Jiang</a>,</span>
+      <span class="collaborator"><a href="https://junchenglee.com/">Juncheng Li</a>,</span>
+      <span class="collaborator"><a href="#">Mingwen Wang</a></span>
+      <br>
+      <a href="" target=""><b>ACCV 2019</b></a> /
+      <a href="https://arxiv.org/abs/1810.02283">Paper</a>
+      </div>
+    </td>
+  </tr>
 
-                            
-              <tr>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <img src='images/lttgan.jpg' width="160">
-                  </div>
-                </td>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/2112.02379">
-                    <papertitle>LTT-GAN: Looking Through Turbulence by Inverting GANs</papertitle>
-                  </a>
-                  <br>
-                  <strong>Kangfu Mei</strong>,
-                  <a href="https://engineering.jhu.edu/vpatel36/sciencex_teams/vishalpatel/">Vishal M. Patel</a>
-                  <br>
-                  <em>IEEE Journal of Selected Topics in Signal Processing</em> <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4200690"><i style="color: gray; font-size: .6rem;">[IF: 7.695]</i></a>
-                  <br>
-                  <!-- <a href="https://kfmei.page/LTT-GAN/">Project Page</a> / -->
-                  <a href="https://arxiv.org/abs/2112.02379">arXiv</a>
-                  <p></p>
-                  <p>The first turbulence mitigation algorithm that can clearly recover face images captured in a range of 300 meters long.</p>
-                </td>
-              </tr>
+   <tr onmouseout="msrn_stop()" onmouseover="msrn_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+    <div class="one">
+      <div class="two" id='msrn_image'>
+        <img src='images/msrn_after.png' width="140">
+      </div>
+      <img src='images/msrn_before.png' width="140">
+      </div>
+  </td>
+  <td>
+    <div class="publication">
+      <br>
+      <p><strong>Multi-scale Residual Network for Image Super-resolution</strong>
+      <br>
+      
+      <span class="collaborator"><a href="https://junchenglee.com/">Juncheng Li</a>,</span>
+      <span class="collaborator"><a href="#">Faming Fang</a>,</span>
+      Kangfu Mei,
+      <span class="collaborator"><a href="#">Guixu Zhang</a></span>
+      <br>
+      <a href="" target=""><b>ECCV 2018</b></a> /
+      <a href="https://openaccess.thecvf.com/content_ECCV_2018/html/Juncheng_Li_Multi-scale_Residual_Network_ECCV_2018_paper.html">Paper</a>
+      </div>
+    </td>
+  </tr>
 
-              <tr>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <img src='images/attanet.png' width="160">
-                  </div>
-                  <script type="text/javascript">
-                    function dpl_start() {
-                      document.getElementById('dpl_image').style.opacity = "1";
-                    }
-
-                    function dpl_stop() {
-                      document.getElementById('dpl_image').style.opacity = "0";
-                    }
-                    dpl_stop()
-                  </script>
-                </td>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
-                  <a href="https://songqi-github.github.io/research/AttaNet/index.html">
-                    <papertitle>AttaNet: Attention-Augmented Network for Fast and Accurate Scene Parsing</papertitle>
-                  </a>
-                  <br>
-                  Qi Song, <strong>Kangfu Mei</strong>,
-                  <a href="https://myweb.cuhk.edu.cn/ruihuang">Rui Huang</a>
-                  <br>
-                  <em>AAAI</em>, 2021
-                  <br>
-                  <a href="https://github.com/songqi-github/AttaNet">code</a> /
-                  <a href="https://arxiv.org/abs/2103.05930">arXiv</a>
-                  <p></p>
-                  <p>Strip Attention Module (SAM) and Attention Fusion Module (AFM) are proposed for enhancing
-                    the accuracy of semantic segmentation networks with limited computational complexity.</p>
-                </td>
-              </tr>
-
-              <tr class="header">
-                <td style="padding-left:20px; padding-top: 10px;width:25%vertical-align:middle">
-                  <heading>2019</heading>
-                  <hr class="solid">
-                </td>
-                <td style="width: 75%;"></td>
-              </tr>
-
-              <tr onmouseout="hern_stop()" onmouseover="hern_start()">
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='hern_image'>
-                      <img src='images/hern_after.jpg' width="160">
-                    </div>
-                    <img src='images/hern_before.jpg' width="160">
-                  </div>
-                  <script type="text/javascript">
-                    function hern_start() {
-                      document.getElementById('hern_image').style.opacity = "1";
-                    }
-
-                    function hern_stop() {
-                      document.getElementById('hern_image').style.opacity = "0";
-                    }
-                    hern_stop()
-                  </script>
-                </td>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
-                  <a
-                    href="https://arxiv.org/abs/1911.08098">
-                    <papertitle>Higher-resolution network for image demosaicing and enhancing</papertitle>
-                  </a>
-                  <br>
-                  <strong>Kangfu Mei</strong>, <a href="https://junchenglee.com/">Juncheng Li</a>, Jiajie Zhang, Haoyu Wu, Jie Li, Rui Huang
-                  <br>
-                  <em>ICCV AIM RAW to RGB mapping challenge</em>, 2019
-                  <br>
-                  <a href="https://github.com/MKFMIKU/RAW2RGBNet">code</a> /
-                  <a href="https://arxiv.org/abs/1911.08098">arXiv</a>
-                  <p></p>
-                  <p>For the first time, a neural ISP has outperformed a traditional ISP (like Huawei's mobile ISP) and achieved visual quality comparable to that of a DSLR.</p>
-                </td>
-              </tr>
-
-              <tr onmouseout="pffnet_stop()" onmouseover="pffnet_start()">
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='pffnet_image'>
-                      <img src='images/pffnet_after.png' width="160">
-                    </div>
-                    <img src='images/pffnet_before.png' width="160">
-                  </div>
-                  <script type="text/javascript">
-                    function pffnet_start() {
-                      document.getElementById('pffnet_image').style.opacity = "1";
-                    }
-
-                    function pffnet_stop() {
-                      document.getElementById('pffnet_image').style.opacity = "0";
-                    }
-                    pffnet_stop()
-                  </script>
-                </td>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
-                  <a
-                    href="https://arxiv.org/abs/1810.02283">
-                    <papertitle>Progressive Feature Fusion Network for Realistic Image Dehazing</papertitle>
-                  </a>
-                  <br>
-                  <strong>Kangfu Mei</strong>, Aiwen Jiang, <a href="https://junchenglee.com/">Juncheng Li</a>, Mingwen Wang
-                  <br>
-                  <em>ACCV</em>, 2019
-                  <br>
-                  <a href="https://github.com/MKFMIKU/PFFNet">code</a> /
-                  <a href="https://arxiv.org/abs/1810.02283">arXiv</a>
-                  <p></p>
-                  <p>PFFNet was the first dehazing netowrk that uses fully end-to-end neural network architecture without physical gating unit. More than <b>100 works</b> (untill 2024) adapot our strategy and show its effectiveness.</p>
-                </td>
-              </tr>
-              
-              <tr class="header">
-                <td style="padding-left:20px; padding-top: 10px;width:25%vertical-align:middle">
-                  <heading>2018</heading>
-                  <hr class="solid">
-                </td>
-                <td style="width: 75%;"></td>
-              </tr>
-
-              <tr onmouseout="msrn_stop()" onmouseover="msrn_start()">
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='msrn_image'>
-                      <img src='images/msrn_after.png' width="160">
-                    </div>
-                    <img src='images/msrn_before.png' width="160">
-                  </div>
-                  <script type="text/javascript">
-                    function msrn_start() {
-                      document.getElementById('msrn_image').style.opacity = "1";
-                    }
-
-                    function msrn_stop() {
-                      document.getElementById('msrn_image').style.opacity = "0";
-                    }
-                    msrn_stop()
-                  </script>
-                </td>
-                <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:75%;vertical-align:middle">
-                  <a
-                    href="https://openaccess.thecvf.com/content_ECCV_2018/html/Juncheng_Li_Multi-scale_Residual_Network_ECCV_2018_paper.html">
-                    <papertitle>Multi-scale Residual Network for Image Super-resolution</papertitle>
-                  </a>
-                  <br>
-                  <a href="https://junchenglee.com/">Juncheng Li</a>, Faming Fang,
-                  <strong>Kangfu Mei</strong>, Guixu Zhang
-                  <br>
-                  <em>ECCV</em>, 2018
-                  <br>
-                  <a href="https://github.com/MIVRC/MSRN-PyTorch">code</a> /
-                  <a href="data/li2018multi.bib">bibtex</a>
-                  <p></p>
-                  <p>We built MSRN in 2018. It quickly becomes the foundamental component in all image restoration works and has more than <b>800 citations</b> untill 2024.</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tbody>
-              <tr>
-                <td>
-                  <heading>Service</heading>
-                  <p>Reviewer for CVPR, ICCV, ECCV, WACV, ICPR</p>
-                  <p>Reviewer of International Journal of Computer Vision (IJCV)</p>
-                  <p>Reviewer of IEEE Transactions on Image Processing (TIP)</p>
-                  <p>Reviewer of IEEE Transactions on Multimedia (TMM)</p>
-                  <p>Reviewer of IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</p>
-                  <p>Reviewer of Computer Vision and Image Understanding (CVIU)</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tbody>
-              <tr>
-                <td>
-                  <heading>Prizes</heading>
-                  <p style="color: crimson">AIM2019 Mobile Raw to DSLR RGB Image Mapping Challenge (ICCV2019 Workshop):
-                    Top 1</p>
-                  <p>Alibaba Youku Video Enhancement and Super-Resolution Challenge 2019: Top 4</p>
-                  <p>NTIRE2018 Image Dehazing Challenge (CVPR2018 Workshop): Honorable Mention Award & Top 6</p>
-                  <p style="color: crimson">University Computer Software Programming Challenge 2018 in The Pearl River
-                    Delta: Gold Award & Best innovative Award</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
+  </script>
   </table>
-</body>
+</div>
+</td>
+</tr>
+  
 
+  <tr>
+  <td colspan = 7>
+  <p>&nbsp;</p>
+    <h2 style="display:inline;">Thesis</h2>
+  <table border="0" cellpadding="0" cellspacing="0" width="900" align="center" bgcolor="#FFFFFF" id="pubs">
+
+  <tr>
+    <td>
+      <img border=0 src="images/jhu_seal3.png" class="publogo">
+    </td>
+    <td>
+      <div class="publication">
+      <br>
+      <p><strong>Learning 3D Modeling and Simulation From and For the Real World</strong>
+      <br>   
+      Kangfu Mei 
+      <br>
+      <a href="https://drive.google.com/file/d/1zoxK1OJpK8ft7EHYXze4Xigm7cagBhaA/view?usp=sharing" target=""><b>Ph.D. Thesis</b></a>    </div>
+    </td>
+  </tr>     
+
+  </table>
+
+  </td>
+  </tr>  
+
+  <tr>
+  <td colspan = 7>
+    <h2 id="misc">Misc.</h2>
+    <ul>
+        <br>
+        <li> I like chinese pop music and my favorite singer is <a href="https://en.wikipedia.org/wiki/Jay_Chou">Jay Chou</a>.    
+        </li>
+        <br>
+    </ul>
+    </td>
+    </tr>
+  
+
+    </table>
+    </center>
+    </div>
+    </div>
+    <br><center><a href="https://www.cs.cornell.edu/~weichiu/">Template</a></center>
+    </center>
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=11104199; 
+var sc_invisible=1; 
+var sc_security="50dd2089"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="free hit
+counter" href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="//c.statcounter.com/11104199/0/50dd2089/1/" alt="free
+hit counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
+<script>
+  showPubs(1)
+  mmsr_stop()
+  sdft_stop()
+  vidm_stop()
+  d2sm_stop()
+  shadow_stop()
+  hern_stop()
+  pffnet_stop()
+  msrn_stop()
+</script>
+</body>
 </html>
