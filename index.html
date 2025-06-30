@@ -171,6 +171,12 @@
       function reface_stop() {
         document.getElementById('reface_image').style.opacity = "0";
       }
+      function atddpm_start() {
+        document.getElementById('atddpm_image').style.opacity = "0";
+      }
+      function atddpm_stop() {
+        document.getElementById('atddpm_image').style.opacity = "1";
+      }
     </script>
 
 </head>
@@ -500,6 +506,30 @@
     </td>
   </tr>
 
+  <tr onmouseout="atddpm_stop()" onmouseover="atddpm_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+    <div class="one">
+      <div class="two" id='atddpm_image'>
+        <img src='images/at_ddpm_before.png' width="140">
+      </div>
+      <img src='images/at_ddpm_after.png' width="140">
+      </div>
+  </td>
+  <td>
+    <div class="publication">
+      <br>
+      <p><strong>AT-DDPM: Restoring Faces degraded by Atmospheric Turbulence using Denoising Diffusion Probabilistic Models</strong>
+      <br>
+      <span class="collaborator"><a href="https://nithin-gk.github.io/">Nithin Gopalakrishnan Nair</a>,</span>
+      Kangfu Mei,
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a></span>
+      <br>
+      <a href="" target=""><b>WACV 2023</b></a> /
+      <a href="https://openaccess.thecvf.com/content/WACV2023/html/Nair_AT-DDPM_Restoring_Faces_Degraded_by_Atmospheric_Turbulence_Using_Denoising_Diffusion_WACV_2023_paper.html">Paper</a> /
+      </div>
+    </td>
+  </tr>
+
   <tr onmouseout="d2sm_stop()" onmouseover="d2sm_start()" class="content-inner">
   <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
     <div class="one">
@@ -727,6 +757,7 @@ hit counter"></a></div></noscript>
   pffnet_stop()
   msrn_stop()
   reface_stop()
+  atddpm_stop()
 </script>
 </body>
 </html>
