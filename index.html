@@ -3,7 +3,7 @@
 <html>
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-    <title>Kangfu Mei, Google Research</title>
+    <title>Kangfu Mei, Google DeepMind</title>
     <style>
     h1 { padding : 0; margin : 0; }
     body { padding : 20px 0; font-family : Arial; font-size : 16px; background-image : url("images/bg.png"); } 
@@ -177,6 +177,12 @@
       function atddpm_stop() {
         document.getElementById('atddpm_image').style.opacity = "1";
       }
+      function kds_start() {
+        document.getElementById('kds_image').style.opacity = "0";
+      }
+      function kds_stop() {
+        document.getElementById('kds_image').style.opacity = "1";
+      }
     </script>
 
 </head>
@@ -189,7 +195,7 @@
 
     <h1>Kang-Fu Mei 梅康夫</h1>
     <p>
-      Research Scientist @ Google Research<br>
+      Research Scientist @ Google DeepMind<br>
       <br>
 
        <a href="mailto:mikumkf@gmail.com">Email</a> / <a href="https://scholar.google.com/citations?user=e_nu_TIAAAAJ&hl=en">Google Scholar</a> / <a href="https://x.com/KangfuM">Twitter</a>  / <a href="#service">Service</a> / <a href="#misc">Misc.</a>
@@ -199,7 +205,7 @@
     <p>
     I am a Research Scientist at <span class="g-blue">G</span><span
                     class="o-red">o</span><span class="o-yellow">o</span><span class="g-blue">g</span><span
-                    class="l-green">l</span><span class="o-red e-red">e</span></span> Research.
+                    class="l-green">l</span><span class="o-red e-red">e</span></span> <span style="color: #125ad8; font-weight: bold;">DeepMind</span>.
     </p>
 
     <p>
@@ -227,7 +233,8 @@
     <table border="0" cellpadding="0" cellspacing="0" width="900" align="center" bgcolor="#FFFFFF">   
       <tr>
         <td width="20"></td>
-            <td width="120" align="center" valign="middle"><img src="images/Research-at-google.png" height="70" /></td>
+            <td width="120" align="center" valign="middle"><img src="images/logo-deepmind.png" height="100" /></td>
+        <td width="120" align="center" valign="middle"><img src="images/Research-at-google.png" height="70" /></td>
             <td width="120" align="center" valign="middle"><img src="images/adobe_logo.png" height="50" /></td>
             <td width="120" align="center" valign="middle"><img src="images/JHU.logo_vertical.blue.png" height="80" style="padding-bottom:-19px" /></td>            
             <td width="120" align="center" valign="middle"><img src="images/damo_logo.jpeg" height="90" style="padding-bottom:-9px" /></td>            
@@ -236,7 +243,8 @@
       </tr>
       <tr>
         <td width="20"></td>
-            <td width="120" align="center" valign="middle">2023 - Present</td>
+        <td width="120" align="center" valign="middle">2025 - Present</td>    
+        <td width="120" align="center" valign="middle">2023 - 2025</td>
             <td width="120" align="center" valign="middle">Summer 2022</td>
             <td width="120" align="center" valign="middle">2021 - 2024</td>
             <td width="120" align="center" valign="middle">Summer 2020</td>
@@ -324,6 +332,33 @@
 
 
   <script id="pubs_by_date" language="text">
+
+  <tr onmouseout="kds_stop()" onmouseover="kds_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='kds_image'>
+                      <img src='images/kds_after.png' width="140">
+                    </div>
+                    <img src='images/kds_before.png' width="140">
+                  </div>
+                </td>
+    <td>
+      <div class="publication">
+      <br>
+      <p><strong>Kernel Density Steering: Inference-Time Scaling via Mode Seeking for Image Restoration</strong>
+      <br>
+      <span class="collaborator">Yuyang Hu, </span>
+      Kangfu Mei,
+      <span class="collaborator">Mojtaba Sahraee-Ardakan, </span>
+      <span class="collaborator">Ulugbek S Kamilov, </span>
+      <span class="collaborator"><a href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a>, </span>
+      <span class="collaborator"><a href="https://mdelbra.github.io">Mauricio Delbracio</a></span>
+      <br>
+      <a href="" target=""><b>Preprint 2025</b></a> /
+      <a href="https://arxiv.org/abs/2507.05604">Paper</a>
+      </div>
+    </td>
+  </tr> 
 
   <tr onmouseout="reface_stop()" onmouseover="reface_start()" class="content-inner">
   <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
@@ -776,6 +811,7 @@ hit counter"></a></div></noscript>
   msrn_stop()
   reface_stop()
   atddpm_stop()
-</script>
+  kds_stop()
+  </script>
 </body>
 </html>
