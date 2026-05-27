@@ -183,6 +183,12 @@
       function kds_stop() {
         document.getElementById('kds_image').style.opacity = "1";
       }
+      function xyzflow_start() {
+        document.getElementById('xyz_image').style.opacity = "0";
+      }
+      function xyzflow_stop() {
+        document.getElementById('kds_image').style.opacity = "1";
+      }
     </script>
 
 </head>
@@ -203,16 +209,16 @@
     <p>
     I am a Senior Research Scientist at <span class="g-blue">G</span><span
                     class="o-red">o</span><span class="o-yellow">o</span><span class="g-blue">g</span><span
-                    class="l-green">l</span><span class="o-red e-red">e</span></span> <span style="color: #125ad8; font-weight: bold;">DeepMind</span>, on the GenAI Veo and Genie team for video generation.
+                    class="l-green">l</span><span class="o-red e-red">e</span></span> <span style="color: #125ad8; font-weight: bold;">DeepMind</span>.
     </p>
 
     <p>
     My research lies at the intersection of Multimodal Generative AI and World Model. I am interested in building AI systems that can <b>simulate</b> our dynamic world for <b>creative control</b>, leveraging these capabilities to enable more robust autonomous systems or advance entertainment applications.
     </p>
 
-    <p>
+    <!-- <p>
       I was a key contributor to Google's first launched fully on-device diffusion model that runs for real-time generation, and my research has contributed to multiple Google products.
-    </p>
+    </p> -->
 
     <p>
     I received my Ph.D. from <a href="https://engineering.jhu.edu/ece/">ECE, Johns Hopkins University</a>, where I worked with <a href="https://engineering.jhu.edu/faculty/vishal-patel/"> Prof. Vishal M. Patel</a> 
@@ -251,9 +257,10 @@
   <p>&nbsp;</p>
     <h2>Recent News</h2>
     <ul>
-      <li><sup><font color="red"><b>NEW</b></font></sup> <b>Dec 2025</b>: <a href="https://arxiv.org/abs/2507.05604">KDS</a> is accepted by NeurIPS25 for poster presentation. 🔥</li>
-      <li><sup><font color="red"><b>NEW</b></font></sup> <b>Oct 2025</b>: Our team at Google DeepMind released <a href="https://deepmind.google/models/veo/">Veo 3.1</a> -- a new SOTA in video gen!</li>
-      <li><sup><font color="red"><b>NEW</b></font></sup> <b>Oct 2025</b>: I gave a talk at <a href="https://knowledgemr-workshop.github.io/">Knowledge-Intensive Multimodal Reasoning Workshop, ICCV 2025</a> for "The Power of Context: How Multimodality Reasoning Improves Image Generation" </li>
+      <li><sup><font color="red"><b>NEW</b></font></sup> <b>May 2026</b>: Try <a href="https://deepmind.google/models/gemini-omni/">Gemini Omni</a>! Our nano banana moment for video models. 🔥</li>
+      <li><b>Dec 2025</b>: <a href="https://arxiv.org/abs/2507.05604">KDS</a> is accepted by NeurIPS25 for poster presentation.</li>
+      <li><b>Oct 2025</b>: Our team at Google DeepMind released <a href="https://deepmind.google/models/veo/">Veo 3.1</a> -- a new SOTA in video gen!</li>
+      <li><b>Oct 2025</b>: I gave a talk at <a href="https://knowledgemr-workshop.github.io/">Knowledge-Intensive Multimodal Reasoning Workshop, ICCV 2025</a> for "The Power of Context: How Multimodality Reasoning Improves Image Generation" </li>
       <li><b>Jul 2025</b>: I am serving as an Area Chair for WACV 2026. 👨‍💻 </li>
       <li><b>Feb 2025</b>: <a href="https://mmsr.kfmei.com/">MMSR</a>  is accepeted by CVPR25. 📷 </li>
       <li><b>Jan 2025</b>: <a href="https://kfmei.com/Field-DiT/"> Field-DiT </a> is accepted by ICLR25. 🧠</li>
@@ -358,6 +365,82 @@
 
   <script id="pubs_by_date" language="text">
 
+  <tr onmouseout="kds_stop()" onmouseover="kds_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='kds_image'>
+                      <img src='images/omni.webp' width="140">
+                    </div>
+                    <img src='images/omni.webp' width="140">
+                  </div>
+                </td>
+    <td>
+      <div class="publication">
+      <br>
+      <p><strong>Gemini Omni Flash 1.0</strong>
+      <br>
+      Core Contributor / DPO Team Leader
+      <br>
+      <a href="https://deepmind.google/models/gemini-omni/" target=""><b>Homepage</b></a>
+      </div>
+    </td>
+  </tr> 
+
+  <tr onmouseout="reface_stop()" onmouseover="reface_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='reface_image'>
+                      <img src='images/reface_after.png' width="140">
+                    </div>
+                    <img src='images/reface_before.png' width="140">
+                  </div>
+                </td>
+    <td>
+      <div class="publication">
+      <br>
+      <p><strong>Reference-Guided Identity Preserving Face Restoration</strong>
+      <br>
+      <span class="collaborator">Mo Zhou, </span>
+      <span class="collaborator">Keren Ye, </span>
+      <span class="collaborator">Viraj Shah, </span>
+      Kangfu Mei,
+      <span class="collaborator"><a href="https://mdelbra.github.io">Mauricio Delbracio</a></span>
+      <span class="collaborator"><a href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a>, </span>
+      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a>, </span>
+      <span class="collaborator"><a href="https://research.google/people/hossein-talebi/">Hossein Talebi</a>, </span>
+      <br>
+      <a href="" target=""><b>TMLR 2026</b></a> /
+      <a href="https://arxiv.org/abs/2505.21905">Paper</a>
+      </div>
+    </td>
+  </tr> 
+
+  <tr onmouseout="xyzflow_stop()" onmouseover="xyzflow_start()" class="content-inner">
+  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='xyz_image'>
+                      <img src='images/XYZFlow.png' width="140">
+                    </div>
+                    <img src='images/XYZFlow.png' width="140">
+                  </div>
+                </td>
+    <td>
+      <div class="publication">
+      <br>
+      <p><strong>XYZFlow: Scaling Multidimensional Shortcut Flows for Efficient Generative Modeling</strong>
+      <br>
+      <span class="collaborator">Jinxiu Liu, </span>
+      <span class="collaborator">Xuanming Liu, </span>
+      Kangfu Mei,
+      <span class="collaborator">Yandong Wen, </span>
+      <span class="collaborator">Weiyang Liu</span>
+      <br>
+      <a href="" target=""><b>ICML 2026</b></a> /
+      <a href="https://icml.cc/virtual/2026/poster/62738">Paper</a>
+      </div>
+    </td>
+  </tr> 
+
   <tr onmouseout="sav_stop()" onmouseover="sav_start()" class="content-inner">
   <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
                   <div class="one">
@@ -383,7 +466,6 @@
       </div>
     </td>
   </tr> 
-
 
   <tr onmouseout="kds_stop()" onmouseover="kds_start()" class="content-inner">
   <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
@@ -429,35 +511,6 @@
       <br>
       <a href="" target=""><b>NeurIPS 2025</b></a> /
       <a href="https://arxiv.org/abs/2507.05604">Paper</a>
-      </div>
-    </td>
-  </tr> 
-
-  <tr onmouseout="reface_stop()" onmouseover="reface_start()" class="content-inner">
-  <td style="padding-left:20px;padding-right:20px;padding-top:5px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='reface_image'>
-                      <img src='images/reface_after.png' width="140">
-                    </div>
-                    <img src='images/reface_before.png' width="140">
-                  </div>
-                </td>
-    <td>
-      <div class="publication">
-      <br>
-      <p><strong>Reference-Guided Identity Preserving Face Restoration</strong>
-      <br>
-      <span class="collaborator">Mo Zhou, </span>
-      <span class="collaborator">Keren Ye, </span>
-      <span class="collaborator">Viraj Shah, </span>
-      Kangfu Mei,
-      <span class="collaborator"><a href="https://mdelbra.github.io">Mauricio Delbracio</a></span>
-      <span class="collaborator"><a href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a>, </span>
-      <span class="collaborator"><a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M. Patel</a>, </span>
-      <span class="collaborator"><a href="https://research.google/people/hossein-talebi/">Hossein Talebi</a>, </span>
-      <br>
-      <a href="" target=""><b>Preprint 2025</b></a> /
-      <a href="https://arxiv.org/abs/2505.21905">Paper</a>
       </div>
     </td>
   </tr> 
